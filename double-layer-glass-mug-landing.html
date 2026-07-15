@@ -1,0 +1,2742 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <title>Double Layer Glass Mug – Prodhan.com</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="https://storage.biddabari.online/biddabari-bucket/uploads/all/4PCgKQGv93MGiJXMIdyMFGboRpRR2GV8YNam0JIE.webp"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://storage.biddabari.online/biddabari-bucket/uploads/all/4PCgKQGv93MGiJXMIdyMFGboRpRR2GV8YNam0JIE.webp"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Hind Siliguri", sans-serif;
+        background: #fff;
+        color: #1e293b;
+        overflow-x: hidden;
+        padding-bottom: 70px;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .font-heading {
+        font-family: "Anek Bangla", sans-serif;
+      }
+
+      /* ══ VARIABLES — RED & BLUE THEME ══ */
+      :root {
+        --blue-600: #2563eb;
+        --blue-700: #1d4ed8;
+        --blue-800: #1e3a8a;
+        --blue-900: #0b1638;
+        --blue-50: #eff6ff;
+        --red-500: #ef4444;
+        --red-600: #dc2626;
+        --red-700: #b91c1c;
+        --green-wa: #25d366;
+        --grad-blue: linear-gradient(135deg, #2563eb, #1d4ed8);
+        --grad-hero: linear-gradient(
+          135deg,
+          #eff6ff 0%,
+          #dbeafe 40%,
+          #fee2e2 100%
+        );
+      }
+
+      /* ══ ANIMATIONS ══ */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      @keyframes shimmer {
+        0% {
+          background-position: -200% 0;
+        }
+        100% {
+          background-position: 200% 0;
+        }
+      }
+      @keyframes pulse-ring-blue {
+        0% {
+          box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 12px rgba(37, 99, 235, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+        }
+      }
+      @keyframes pulse-ring-red {
+        0% {
+          box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.45);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+        }
+      }
+      @keyframes star-twinkle {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.35;
+        }
+      }
+
+      .sa {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .sa.vis {
+        opacity: 1;
+        transform: none;
+      }
+      .float-anim {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      /* ══ URGENCY BAR (RED) — identical on all devices ══ */
+      .urgency-bar {
+        background: linear-gradient(
+          90deg,
+          #b91c1c,
+          #dc2626,
+          #ef4444,
+          #dc2626,
+          #b91c1c
+        );
+        background-size: 300% 100%;
+        animation: shimmer 4s linear infinite;
+        color: #fff;
+        padding: 11px 44px 11px 12px;
+        font-family: "Anek Bangla", sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 19px;
+        font-weight: 800;
+        position: relative;
+        z-index: 50;
+        overflow-x: auto;
+      }
+      .urgency-inner {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: nowrap;
+        margin: 0 auto;
+      }
+      .urgency-msg {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .urgency-timer {
+        background: rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        padding: 6px 26px;
+        border-radius: 20px;
+        font-weight: 800;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        white-space: nowrap;
+        flex-shrink: 0;
+        font-family: "Anek Bangla", sans-serif;
+      }
+      .urgency-btn {
+        background: #fff;
+        color: #b91c1c;
+        padding: 8px 18px;
+        border-radius: 20px;
+        font-weight: 800;
+        font-size: 16px;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        white-space: nowrap;
+        transition: 0.2s;
+        flex-shrink: 0;
+        font-family: "Anek Bangla", sans-serif;
+      }
+      .urgency-btn:hover {
+        transform: translateY(-1px);
+        color: #991b1b;
+      }
+      .urgency-close {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.9);
+        color: #b91c1c;
+        border: none;
+        font-size: 11px;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        cursor: pointer;
+        line-height: 1;
+        transition: 0.2s;
+        padding: 0;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .urgency-close:hover {
+        background: #fff;
+        transform: translateY(-50%) scale(1.08);
+      }
+
+      @media (max-width: 576px) {
+        .urgency-bar {
+          padding: 10px 42px 10px 10px;
+        }
+        .urgency-inner {
+          flex-wrap: wrap;
+          justify-content: center;
+          row-gap: 8px;
+        }
+        .urgency-msg {
+          flex: 0 0 100%;
+          justify-content: center;
+        }
+        .urgency-close {
+          top: 12px;
+          transform: none;
+        }
+        .urgency-close:hover {
+          transform: scale(1.08);
+        }
+      }
+
+      /* ══ HERO ══ */
+      .hero {
+        background: #eef2ff;
+        padding: 32px 16px 40px;
+        position: relative;
+        overflow: hidden;
+        font-family: "Anek Bangla", sans-serif;
+      }
+      .hero-deco {
+        position: absolute;
+        pointer-events: none;
+        border-radius: 50%;
+        filter: blur(60px);
+        opacity: 0.45;
+      }
+      .hero-deco-1 {
+        top: -80px;
+        left: -80px;
+        width: 300px;
+        height: 300px;
+        background: #bfdbfe;
+      }
+      .hero-deco-2 {
+        bottom: -60px;
+        right: -60px;
+        width: 340px;
+        height: 340px;
+        background: #fecaca;
+      }
+      .toy-float {
+        position: absolute;
+        font-size: 26px;
+        opacity: 0.18;
+        pointer-events: none;
+        z-index: 2;
+        animation: float 3s ease-in-out infinite;
+      }
+      /* Clean, distraction-free hero background on small devices */
+      @media (max-width: 576px) {
+        .hero {
+          background: #eef2ff;
+          padding: 20px 14px 28px;
+        }
+        .hero-deco,
+        .toy-float {
+          display: none;
+        }
+      }
+      .hero-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: var(--blue-700);
+        color: #fff;
+        padding: 5px 14px;
+        border-radius: 50px;
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 14px;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+      }
+      .hero-h1 {
+        font-size: clamp(1.7rem, 6vw, 3rem);
+        font-weight: 800;
+        line-height: 1.15;
+        margin-bottom: 10px;
+        color: #1e293b;
+      }
+      .hero-h1 .grad-text {
+        color: var(--blue-700);
+      }
+      .hero-sub {
+        font-size: clamp(14px, 3vw, 17px);
+        color: #475569;
+        margin-bottom: 18px;
+        line-height: 1.55;
+        font-weight: 500;
+      }
+      .hero-price {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+      }
+      .hero-price .orig {
+        font-size: 16px;
+        color: #94a3b8;
+        text-decoration: line-through;
+      }
+      .hero-price .sale {
+        font-size: 28px;
+        font-weight: 800;
+        color: var(--red-600);
+      }
+      .hero-price .save {
+        background: #dcfce7;
+        color: #16a34a;
+        padding: 3px 10px;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 700;
+        border: 1px solid #bbf7d0;
+      }
+
+      .hero-timer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 22px;
+        flex-wrap: wrap;
+      }
+      .timer-label {
+        font-size: 12px;
+        font-weight: 700;
+        color: #b91c1c;
+        background: #fef2f2;
+        padding: 4px 10px;
+        border-radius: 50px;
+        border: 1px solid #fecaca;
+        animation: pulse-ring-red 2s infinite;
+      }
+      .t-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        border: 1.5px solid #bfdbfe;
+        border-radius: 10px;
+        width: 54px;
+        height: 54px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      }
+      .t-num {
+        font-size: 21px;
+        font-weight: 800;
+        color: var(--blue-700);
+        line-height: 1;
+      }
+      .t-lbl {
+        font-size: 9px;
+        font-weight: 700;
+        color: #94a3b8;
+        margin-top: 2px;
+        text-transform: uppercase;
+      }
+      .t-sep {
+        font-size: 21px;
+        font-weight: 800;
+        color: #93c5fd;
+        margin-top: -8px;
+        animation: star-twinkle 1s infinite;
+      }
+
+      /* ══ CTA BUTTON GROUP (used across page) ══ */
+      .cta-group {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        max-width: 420px;
+        margin: 0 auto;
+      }
+      .btn-order-main {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        color: #fff;
+        padding: 15px 24px;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+        font-family: "Anek Bangla", sans-serif;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+        transition: 0.2s;
+        width: 100%;
+        letter-spacing: 0.2px;
+        animation: pulse-ring-blue 2.2s infinite;
+      }
+      .btn-order-main:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+        color: #fff;
+        animation: none;
+      }
+      .cta-sub-row {
+        display: flex;
+        gap: 10px;
+      }
+      .btn-wa-outline,
+      .btn-call-outline {
+        flex: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        padding: 12px 14px;
+        border-radius: 12px;
+        font-size: 14px;
+        font-weight: 700;
+        font-family: "Anek Bangla", sans-serif;
+        transition: 0.2s;
+        border: 1.5px solid;
+        background: #fff;
+      }
+      .btn-wa-outline {
+        color: var(--green-wa);
+        border-color: var(--green-wa);
+      }
+      .btn-wa-outline:hover {
+        background: var(--green-wa);
+        color: #fff;
+      }
+      .btn-call-outline {
+        color: var(--blue-700);
+        border-color: var(--blue-700);
+      }
+      .btn-call-outline:hover {
+        background: var(--blue-700);
+        color: #fff;
+      }
+
+      /* ══ TRUST STRIP ══ */
+      .trust-strip {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+        padding: 12px 16px;
+        background: #fff;
+        border-top: 1px solid #f1f5f9;
+        border-bottom: 1px solid #f1f5f9;
+      }
+      .trust-item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #475569;
+      }
+
+      /* ══ SECTION TITLE ══ */
+      .sec-title-wrap {
+        text-align: center;
+        margin-bottom: 30px;
+        padding: 0 12px;
+      }
+      .sec-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: var(--blue-50);
+        color: var(--blue-700);
+        padding: 5px 14px;
+        border-radius: 50px;
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        border: 1px solid #bfdbfe;
+        font-family: "Anek Bangla", sans-serif;
+      }
+      .sec-label.on-dark {
+        background: rgba(255, 255, 255, 0.08);
+        color: #93c5fd;
+        border-color: rgba(147, 197, 253, 0.3);
+      }
+      .sec-h2 {
+        font-family: "Anek Bangla", sans-serif;
+        font-size: clamp(1.4rem, 4vw, 2.1rem);
+        font-weight: 800;
+        color: #1e293b;
+        line-height: 1.25;
+        margin-bottom: 8px;
+      }
+      .sec-h2 span {
+        background: linear-gradient(135deg, #2563eb, #dc2626);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .sec-h2.on-dark {
+        color: #fff;
+      }
+      .sec-desc {
+        font-size: 15px;
+        color: #64748b;
+        max-width: 550px;
+        margin: 0 auto;
+      }
+      .sec-desc.on-dark {
+        color: #94a3b8;
+      }
+
+      /* ══ PRODUCTS GRID ══ */
+      .products-section {
+        padding: 40px 16px 50px;
+        background: linear-gradient(180deg, #f8fafc, #fff);
+      }
+      .prod-card {
+        background: #fff;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1.5px solid #f1f5f9;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s;
+        position: relative;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+      }
+      .prod-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+        border-color: var(--blue-600);
+      }
+      .prod-card.selected {
+        border-color: var(--red-500);
+        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
+      }
+      .prod-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 5;
+        background: linear-gradient(135deg, #dc2626, #b91c1c);
+        color: #fff;
+        padding: 3px 9px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 800;
+        box-shadow: 0 3px 8px rgba(220, 38, 38, 0.4);
+      }
+      .prod-hot {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 5;
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        color: #fff;
+        padding: 3px 9px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 800;
+        box-shadow: 0 3px 8px rgba(37, 99, 235, 0.4);
+      }
+      .prod-img-wrap {
+        width: 100%;
+
+        aspect-ratio: 1/1;
+        overflow: hidden;
+        background: #eff6ff;
+        cursor: pointer;
+      }
+      .prod-img {
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.4s;
+      }
+      .prod-card:hover .prod-img {
+        transform: scale(1.07);
+      }
+      .prod-body {
+        padding: 12px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .prod-name {
+        font-family: "Anek Bangla", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 8px;
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      @media (min-width: 640px) {
+        .prod-name {
+          font-size: 16px;
+        }
+      }
+      .prod-price-row {
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+      }
+      .prod-orig {
+        font-size: 12px;
+        color: #94a3b8;
+        font-weight: 400;
+        position: relative;
+      }
+      .prod-orig::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -3%;
+        width: 106%;
+        height: 1.5px;
+        background: #ef4444;
+        transform: rotate(-12deg);
+      }
+      .prod-sale {
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--red-600);
+      }
+      @media (min-width: 640px) {
+        .prod-sale {
+          font-size: 21px;
+        }
+      }
+      .prod-save {
+        background: #dcfce7;
+        color: #16a34a;
+        padding: 2px 8px;
+        border-radius: 6px;
+        font-size: 11px;
+        font-weight: 700;
+        border: 1px solid #bbf7d0;
+      }
+      .prod-add-btn {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        background: var(--grad-blue);
+        color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        font-family: "Anek Bangla", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        transition: all 0.25s;
+        margin-top: auto;
+      }
+      .prod-add-btn:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+        color: #fff;
+      }
+      .prod-add-btn.added {
+        background: linear-gradient(135deg, #dc2626, #b91c1c);
+      }
+      .prod-qty-ctrl {
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+        background: #f8fafc;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-top: 8px;
+        border: 1.5px solid #bfdbfe;
+      }
+      .prod-qty-ctrl.show {
+        display: flex;
+      }
+      .prod-qty-btn {
+        width: 32px;
+        height: 32px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--blue-700);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.15s;
+      }
+      .prod-qty-btn:hover {
+        background: var(--blue-50);
+      }
+      .prod-qty-val {
+        font-size: 15px;
+        font-weight: 700;
+        color: #1e293b;
+      }
+
+      /* ══ FEATURES SECTION (image 1 style) ══ */
+      .features-section {
+        padding: 44px 16px;
+        background: #fff;
+      }
+      .feat-card {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        padding: 20px 14px;
+        text-align: center;
+        transition: all 0.3s;
+        height: 100%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+      }
+      .feat-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 24px rgba(37, 99, 235, 0.12);
+        border-color: #bfdbfe;
+      }
+      .feat-icon-wrap {
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 10px;
+        font-size: 26px;
+      }
+      .feat-icon-wrap.blue {
+        background: #dbeafe;
+      }
+      .feat-icon-wrap.red {
+        background: #fee2e2;
+      }
+      .feat-title {
+        font-family: "Anek Bangla", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        color: #1e293b;
+        line-height: 1.35;
+        margin-bottom: 4px;
+      }
+      .feat-sub {
+        font-size: 12px;
+        color: #64748b;
+        line-height: 1.4;
+      }
+
+      /* ══ HOW TO USE SECTION (image 2 style — dark navy) ══ */
+      .howto-section {
+        background: var(--blue-900);
+        padding: 50px 16px;
+        position: relative;
+        overflow: hidden;
+      }
+      .howto-section::before {
+        content: "";
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(
+          circle,
+          rgba(37, 99, 235, 0.35),
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .howto-section::after {
+        content: "";
+        position: absolute;
+        bottom: -100px;
+        left: -100px;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(
+          circle,
+          rgba(220, 38, 38, 0.25),
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .howto-inner {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      /* Mobile / tablet single-column timeline */
+      .howto-line {
+        position: relative;
+        padding-left: 44px;
+      }
+      .howto-line::before {
+        content: "";
+        position: absolute;
+        left: 19px;
+        top: 8px;
+        bottom: 8px;
+        width: 2px;
+        background: linear-gradient(180deg, #2563eb, #dc2626);
+      }
+      .howto-step {
+        position: relative;
+        margin-bottom: 26px;
+      }
+      .howto-step:last-child {
+        margin-bottom: 0;
+      }
+      .howto-step .howto-num {
+        position: absolute;
+        left: -44px;
+        top: 0;
+      }
+      .howto-card {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 14px 16px;
+      }
+      .howto-card strong {
+        display: block;
+        font-family: "Anek Bangla", sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 4px;
+      }
+      .howto-card span {
+        font-size: 13px;
+        color: #94a3b8;
+        line-height: 1.5;
+      }
+      .howto-num {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--grad-blue);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 16px;
+        font-family: "Anek Bangla", sans-serif;
+        box-shadow: 0 0 0 5px rgba(37, 99, 235, 0.18);
+        z-index: 3;
+        flex-shrink: 0;
+      }
+
+      /* Desktop zigzag timeline (matches reference layout) */
+      .howto-timeline {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .howto-timeline::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 10px;
+        bottom: 10px;
+        width: 2px;
+        background: linear-gradient(180deg, #2563eb, #dc2626);
+        transform: translateX(-50%);
+      }
+      .howto-row {
+        display: grid;
+        grid-template-columns: 1fr 50px 1fr;
+        align-items: center;
+        column-gap: 28px;
+        margin-bottom: 34px;
+        position: relative;
+      }
+      .howto-row:last-child {
+        margin-bottom: 0;
+      }
+      .howto-row .howto-num {
+        margin: 0 auto;
+        position: relative;
+      }
+      .howto-col {
+        min-height: 1px;
+      }
+      .howto-col.right {
+        text-align: left;
+      }
+
+      /* ══ FINAL CTA SECTION ══ */
+      .cta-section {
+        padding: 50px 16px;
+        background: linear-gradient(135deg, #1d4ed8, #2563eb, #dc2626);
+        text-align: center;
+        font-family: "Anek Bangla", sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-h2 {
+        font-size: clamp(1.4rem, 4vw, 2.3rem);
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 10px;
+        line-height: 1.25;
+      }
+      .cta-sub {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 26px;
+      }
+      .btn-cta-main-white {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: #fff;
+        color: var(--blue-700);
+        padding: 15px 28px;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+        font-family: "Anek Bangla", sans-serif;
+        transition: 0.2s;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+        width: 100%;
+        animation: pulse-ring-white 2.2s infinite;
+      }
+      .btn-cta-main-white:hover {
+        transform: translateY(-2px);
+        color: #1e40af;
+        animation: none;
+      }
+      @keyframes pulse-ring-white {
+        0% {
+          box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.55);
+        }
+        70% {
+          box-shadow: 0 0 0 12px rgba(255, 255, 255, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+        }
+      }
+      .cta-sub-row-white .btn-wa-outline,
+      .cta-sub-row-white .btn-call-outline {
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+      .cta-sub-row-white .btn-wa-outline:hover {
+        background: var(--green-wa);
+        border-color: var(--green-wa);
+      }
+      .cta-sub-row-white .btn-call-outline:hover {
+        background: #fff;
+        color: var(--blue-700);
+      }
+
+      /* ══ CHECKOUT ══ */
+      #Checkout {
+        background: #f8fafc;
+        padding: 30px 16px 50px;
+        font-family: "Anek Bangla", sans-serif;
+      }
+      .co-wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .co-heading {
+        font-size: 20px;
+        font-weight: 800;
+        color: #1e293b;
+        margin-bottom: 6px;
+      }
+      .co-sub {
+        font-size: 14px;
+        color: #64748b;
+        margin-bottom: 20px;
+      }
+      .co-cart-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 24px;
+      }
+      .co-cart-item {
+        background: #fff;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        transition: all 0.2s;
+        cursor: pointer;
+      }
+      .co-cart-item.in-cart {
+        border-color: var(--red-500);
+        background: #fef2f2;
+      }
+      .co-cart-item:hover {
+        border-color: var(--blue-600);
+      }
+      .co-cart-cb {
+        width: 18px;
+        height: 18px;
+        accent-color: var(--red-600);
+        flex-shrink: 0;
+        cursor: pointer;
+      }
+      .co-cart-img {
+        width: 64px;
+        height: 64px;
+        object-fit: cover;
+        border-radius: 8px;
+        background: #eff6ff;
+        flex-shrink: 0;
+        border: 1px solid #dbeafe;
+      }
+      .co-cart-body {
+        flex: 1;
+        min-width: 0;
+      }
+      .co-cart-name {
+        font-size: 14px;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 4px;
+        line-height: 1.2;
+      }
+      .co-cart-price {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--red-600);
+      }
+      .co-cart-orig {
+        font-size: 12px;
+        color: #94a3b8;
+        text-decoration: line-through;
+        margin-right: 4px;
+      }
+      .co-cart-qw {
+        display: flex;
+        align-items: center;
+        border: 1px solid #bfdbfe;
+        border-radius: 6px;
+        overflow: hidden;
+        height: 28px;
+        background: #fff;
+        margin-top: 6px;
+        width: 104px;
+        cursor: default;
+      }
+      .co-cart-qb {
+        width: 26px;
+        height: 28px;
+        background: #eff6ff;
+        border: none;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--blue-700);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.15s;
+      }
+      .co-cart-qb:hover {
+        background: #dbeafe;
+      }
+      .co-cart-qi {
+        width: 30px;
+        height: 28px;
+        border: none;
+        border-left: 1px solid #bfdbfe;
+        border-right: 1px solid #bfdbfe;
+        text-align: center;
+        font-size: 13px;
+        outline: none;
+        color: #1e293b;
+        background: #fff;
+      }
+      .co-cart-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 6px;
+        flex-shrink: 0;
+      }
+      .co-cart-total {
+        font-size: 15px;
+        font-weight: 800;
+        color: #1e293b;
+        white-space: nowrap;
+      }
+
+      .ship-section {
+        background: #fff;
+        padding: 14px;
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        margin-bottom: 16px;
+      }
+      .ship-h {
+        font-size: 16px;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 10px;
+        padding-bottom: 7px;
+        border-bottom: 1px solid #f1f5f9;
+      }
+      .ship-lbl {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 11px 12px;
+        margin-bottom: 8px;
+        background: #f8fafc;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .ship-lbl:last-child {
+        margin-bottom: 0;
+      }
+      .ship-lbl.active,
+      .ship-lbl:hover {
+        border-color: var(--blue-600);
+        background: #eff6ff;
+      }
+      .ship-lbl input[type="radio"] {
+        width: 16px;
+        height: 16px;
+        accent-color: var(--blue-600);
+        flex-shrink: 0;
+      }
+      .ship-icon {
+        width: 36px;
+        height: 36px;
+        background: #dbeafe;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        flex-shrink: 0;
+      }
+      .ship-info strong {
+        display: block;
+        font-size: 14px;
+        font-weight: 700;
+        color: #1e293b;
+      }
+      .ship-info span {
+        font-size: 12px;
+        color: #64748b;
+      }
+
+      .cf {
+        margin-bottom: 14px;
+      }
+      .cf label {
+        display: block;
+        font-size: 14px;
+        font-weight: 700;
+        color: #374151;
+        margin-bottom: 5px;
+      }
+      .cf label .r {
+        color: var(--red-600);
+      }
+      .cf input,
+      .cf textarea {
+        width: 100%;
+        padding: 11px 14px;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 10px;
+        font-family: "Anek Bangla", sans-serif;
+        font-size: 15px;
+        outline: none;
+        color: #1e293b;
+        background: #fff;
+        transition: all 0.2s;
+      }
+      .cf input:focus,
+      .cf textarea:focus {
+        border-color: var(--blue-600);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      }
+      .cf input.err {
+        border-color: var(--red-600);
+      }
+      .cf .emsg {
+        font-size: 12px;
+        color: var(--red-600);
+        margin-top: 4px;
+        display: none;
+        font-weight: 500;
+      }
+      .cf .emsg.show {
+        display: block;
+      }
+      .cf textarea {
+        resize: vertical;
+        min-height: 68px;
+        font-size: 14px;
+      }
+
+      .ord-lbl {
+        font-size: 17px;
+        font-weight: 800;
+        color: #1e293b;
+        margin-bottom: 12px;
+      }
+      .ord-box {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 14px;
+      }
+      .otbl {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: "Hind Siliguri", sans-serif;
+      }
+      .otbl thead th {
+        background: #eff6ff;
+        padding: 10px 14px;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--blue-700);
+        text-align: left;
+        border-bottom: 1px solid #dbeafe;
+      }
+      .otbl thead th:last-child {
+        text-align: right;
+      }
+      .otbl tbody td {
+        padding: 11px 14px;
+        border-bottom: 1px solid #f8fafc;
+        font-size: 14px;
+        color: #334155;
+        vertical-align: middle;
+      }
+      .otbl tbody td:last-child {
+        text-align: right;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+      .otbl .ttl-row th,
+      .otbl .ttl-row td {
+        font-size: 16px;
+        font-weight: 800;
+        color: #1e293b;
+        border-top: 2px solid #e2e8f0;
+        padding-top: 12px;
+      }
+      .otbl .ttl-row td {
+        text-align: right;
+      }
+      .oi-wrap {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .oi-img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 6px;
+        background: #eff6ff;
+        border: 1px solid #dbeafe;
+        flex-shrink: 0;
+      }
+      .oi-nm {
+        font-size: 12px;
+        font-weight: 700;
+        color: #1e293b;
+        line-height: 1.3;
+        font-family: "Anek Bangla", sans-serif;
+      }
+      .oi-qty {
+        font-size: 11px;
+        color: #94a3b8;
+        margin-top: 1px;
+      }
+
+      .pay-box {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 14px;
+      }
+      .pay-hdr {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 14px;
+        border-bottom: 1px solid #f8fafc;
+      }
+      .pay-hdr input {
+        width: 16px;
+        height: 16px;
+        accent-color: var(--red-600);
+      }
+      .pay-hdr span {
+        font-size: 15px;
+        font-weight: 700;
+        color: #1e293b;
+      }
+      .pay-body {
+        padding: 10px 14px;
+        background: #f8fafc;
+        font-size: 13px;
+        color: #64748b;
+      }
+      .co-prv {
+        font-size: 11px;
+        color: #94a3b8;
+        margin-bottom: 14px;
+        line-height: 1.5;
+      }
+      .co-prv a {
+        color: var(--red-600);
+      }
+
+      .co-btn {
+        width: 100%;
+        padding: 15px;
+        font-size: 18px;
+        font-weight: 800;
+        background: linear-gradient(135deg, #dc2626, #b91c1c);
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        font-family: "Anek Bangla", sans-serif;
+        animation: pulse-ring-red 2s infinite;
+        transition: all 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+      .co-btn:hover {
+        transform: scale(1.01);
+        animation: none;
+        box-shadow: 0 10px 24px rgba(220, 38, 38, 0.4);
+      }
+      .co-btn:disabled {
+        background: #cbd5e1;
+        color: #94a3b8;
+        cursor: not-allowed;
+        animation: none;
+        box-shadow: none;
+      }
+
+      /* Modal */
+      .vid-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.35);
+        backdrop-filter: blur(2px);
+        z-index: 99999;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        pointer-events: none;
+      }
+      .vid-modal.open {
+        display: flex;
+        pointer-events: auto;
+      }
+      .vid-modal-box {
+        width: 100%;
+        max-width: 800px;
+        background: #000;
+        border-radius: 12px;
+        overflow: visible;
+        position: relative;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        pointer-events: auto;
+      }
+      .vid-modal-box iframe {
+        width: 100%;
+        aspect-ratio: 16/9;
+        display: block;
+        border: none;
+        border-radius: 12px;
+      }
+      .vid-modal-close {
+        position: absolute;
+        top: -16px;
+        right: -16px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #fff;
+        color: #1e293b;
+        border: 2px solid #f1f5f9;
+        font-size: 16px;
+        font-weight: 800;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        z-index: 2;
+        transition: 0.2s;
+      }
+      .vid-modal-close:hover {
+        background: #dc2626;
+        color: #fff;
+        transform: scale(1.08);
+      }
+
+      .mobile-sticky {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9000;
+        background: #fff;
+        border-top: 1.5px solid #fecaca;
+        padding: 10px 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        box-shadow: 0 -4px 20px rgba(220, 38, 38, 0.12);
+      }
+      @media (min-width: 768px) {
+        .mobile-sticky {
+          display: none;
+        }
+      }
+      .mobile-total {
+        font-size: 18px;
+        font-weight: 800;
+        color: #1e293b;
+        flex-shrink: 0;
+      }
+      .mobile-total small {
+        display: block;
+        font-size: 11px;
+        font-weight: 500;
+        color: #64748b;
+      }
+      .mobile-order-btn {
+        flex: 1;
+        padding: 12px;
+        background: linear-gradient(135deg, #dc2626, #b91c1c);
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-family: "Anek Bangla", sans-serif;
+        font-size: 16px;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        transition: all 0.2s;
+        animation: pulse-ring-red 2s infinite;
+      }
+      .mobile-order-btn:disabled {
+        background: #cbd5e1;
+        cursor: not-allowed;
+        animation: none;
+      }
+      @media (min-width: 768px) {
+        body {
+          padding-bottom: 0;
+        }
+      }
+      .saf {
+        color: #16a34a;
+        font-weight: 700;
+      }
+      .sap {
+        color: #475569;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ══ URGENCY BAR ══ -->
+    <div class="urgency-bar" id="urgencyBar">
+      <div class="urgency-inner">
+        <span class="urgency-msg"
+          >⚠️ স্টক সীমিত! <strong>৩৩% ছাড়</strong> পেতে অর্ডার করুন</span
+        >
+        <span class="urgency-timer"
+          >⏱ <span id="ubh">00</span>:<span id="ubm">00</span></span
+        >
+        <a href="#Checkout" class="urgency-btn">অর্ডার করুন →</a>
+      </div>
+      <button
+        type="button"
+        class="urgency-close"
+        aria-label="বন্ধ করুন"
+        onclick="document.getElementById('urgencyBar').style.display = 'none'"
+      >
+        ✕
+      </button>
+    </div>
+
+    <!-- ══ HERO ══ -->
+    <section class="hero">
+      <div class="hero-deco hero-deco-1"></div>
+      <div class="hero-deco hero-deco-2"></div>
+      <div class="toy-float" style="top: 10%; left: 5%; animation-delay: 0s">
+        ☕
+      </div>
+      <div class="toy-float" style="top: 20%; right: 8%; animation-delay: 1s">
+        🍵
+      </div>
+      <div class="toy-float" style="bottom: 15%; left: 8%; animation-delay: 2s">
+        ✨
+      </div>
+      <div
+        class="toy-float"
+        style="bottom: 20%; right: 5%; animation-delay: 0.5s"
+      >
+        🎁
+      </div>
+
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-9 text-center">
+            <div class="hero-tag sa">🎉 প্রিমিয়াম কোয়ালিটির মগ</div>
+            <h1 class="hero-h1 sa">
+              আপনার প্রতিদিনের চা-কফির জন্য<br />
+              <span class="grad-text">ডাবল লেয়ার গ্লাস মগ!</span>
+            </h1>
+            <p class="hero-sub sa">
+              হিট-রেজিস্ট্যান্ট বোরোসিলিকেট গ্লাসে তৈরি, ডাবল ওয়াল ইনসুলেশন
+              থাকায় হাত পোড়ে না<br class="d-none d-sm-block" />
+              — এলিগ্যান্ট ডিজাইনের এই মগ নিজে ব্যবহার করুন বা প্রিয়জনকে উপহার
+              দিন!
+            </p>
+
+            <div class="hero-price sa">
+              <span class="orig">৳1500</span>
+              <span class="sale">৳999</span>
+              <span class="save">৳501 সাশ্রয়</span>
+            </div>
+
+            <div class="hero-timer sa">
+              <span class="timer-label">🔥 অফার শেষ হচ্ছে:</span>
+              <div class="t-box">
+                <span class="t-num" id="th">00</span
+                ><span class="t-lbl">ঘন্টা</span>
+              </div>
+              <span class="t-sep">:</span>
+              <div class="t-box">
+                <span class="t-num" id="tm">00</span
+                ><span class="t-lbl">মিনিট</span>
+              </div>
+              <span class="t-sep">:</span>
+              <div class="t-box">
+                <span class="t-num" id="ts">00</span
+                ><span class="t-lbl">সেকেন্ড</span>
+              </div>
+            </div>
+
+            <div class="cta-group sa">
+              <a href="#Checkout" class="btn-order-main">🛒 এখনই অর্ডার করুন</a>
+              <div class="cta-sub-row">
+                <a
+                  href="https://wa.link/jwi3gl"
+                  target="_blank"
+                  class="btn-wa-outline"
+                >
+                  <svg
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                    />
+                  </svg>
+                  হোয়াটসঅ্যাপ
+                </a>
+                <a href="tel:09643330000" class="btn-call-outline"
+                  >📞 কল করুন</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ TRUST STRIP ══ -->
+    <div class="trust-strip">
+      <div class="trust-item">✅ ১০০% অরিজিনাল</div>
+      <div class="trust-item">🚚 দ্রুত ডেলিভারি</div>
+      <div class="trust-item">💰 Cash on Delivery</div>
+      <div class="trust-item">↩️ Easy Return</div>
+      <div class="trust-item">📞 ২৪/৭ সাপোর্ট</div>
+    </div>
+
+    <!-- ══ PRODUCTS ══ -->
+    <section class="products-section">
+      <div class="container">
+        <div class="sec-title-wrap sa">
+          <div class="sec-label">🎁 আমাদের কালেকশন</div>
+          <h2 class="sec-h2">পছন্দের <span>ডাবল লেয়ার গ্লাস মগ</span></h2>
+          <p class="sec-desc">
+            প্রতিটি মগ প্রিমিয়াম হিট-রেজিস্ট্যান্ট গ্লাস দিয়ে তৈরি, প্রতিদিনের
+            ব্যবহার ও উপহার — দুটোর জন্যই উপযুক্ত
+          </p>
+        </div>
+
+        <div class="row g-3 g-md-4">
+          <!-- mug-1 -->
+          <div class="col-6 col-md-3">
+            <div class="prod-card sa selected" id="pcard-1">
+              <div class="prod-badge">-27%</div>
+              <div class="prod-hot">🔥 সিলেক্টেড</div>
+              <div class="prod-img-wrap">
+                <img
+                  class="prod-img"
+                  src="media/mug-1.jpeg"
+                  alt="Pastel Flower Double Layer Mug"
+                  onerror="
+                    this.src =
+                      'https://placehold.co/400x400/dbeafe/1d4ed8?text=Pastel+Flower+Mug'
+                  "
+                />
+              </div>
+              <div class="prod-body">
+                <h3 class="prod-name">Pastel Flower Double Layer Mug</h3>
+                <div class="prod-price-row">
+                  <span class="prod-orig">৳1500</span>
+                  <span class="prod-sale">৳1099</span>
+                  <span class="prod-save">৳401 সাশ্রয়</span>
+                </div>
+                <button
+                  class="prod-add-btn added"
+                  id="pbtn-1"
+                  onclick="toggleFromCard(1)"
+                >
+                  <span>✓ যোগ হয়েছে</span>
+                </button>
+                <div class="prod-qty-ctrl show" id="pqc-1">
+                  <button class="prod-qty-btn" onclick="chgQty(1, -1)">
+                    −
+                  </button>
+                  <span class="prod-qty-val" id="pqv-1">1</span>
+                  <button class="prod-qty-btn" onclick="chgQty(1, 1)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- mug-2 -->
+          <div class="col-6 col-md-3">
+            <div class="prod-card sa" id="pcard-2">
+              <div class="prod-badge">-27%</div>
+              <div class="prod-img-wrap">
+                <img
+                  class="prod-img"
+                  src="media/mug-2.jpeg"
+                  alt="Blue Wave Double Layer Mug"
+                  onerror="
+                    this.src =
+                      'https://placehold.co/400x400/dbeafe/1d4ed8?text=Blue+Wave+Mug'
+                  "
+                />
+              </div>
+              <div class="prod-body">
+                <h3 class="prod-name">Blue Wave Double Layer Mug</h3>
+                <div class="prod-price-row">
+                  <span class="prod-orig">৳1500</span>
+                  <span class="prod-sale">৳1099</span>
+                  <span class="prod-save">৳401 সাশ্রয়</span>
+                </div>
+                <button
+                  class="prod-add-btn"
+                  id="pbtn-2"
+                  onclick="toggleFromCard(2)"
+                >
+                  <span>🛒 কার্টে যোগ করুন</span>
+                </button>
+                <div class="prod-qty-ctrl" id="pqc-2">
+                  <button class="prod-qty-btn" onclick="chgQty(2, -1)">
+                    −
+                  </button>
+                  <span class="prod-qty-val" id="pqv-2">1</span>
+                  <button class="prod-qty-btn" onclick="chgQty(2, 1)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- mug-3 -->
+          <div class="col-6 col-md-3">
+            <div class="prod-card sa" id="pcard-3">
+              <div class="prod-badge">-33%</div>
+              <div class="prod-img-wrap">
+                <img
+                  class="prod-img"
+                  src="media/mug-3.jpeg"
+                  alt="Rose Gold Double Layer Mug"
+                  onerror="
+                    this.src =
+                      'https://placehold.co/400x400/dbeafe/1d4ed8?text=Rose+Gold+Mug'
+                  "
+                />
+              </div>
+              <div class="prod-body">
+                <h3 class="prod-name">Rose Gold Double Layer Mug</h3>
+                <div class="prod-price-row">
+                  <span class="prod-orig">৳1500</span>
+                  <span class="prod-sale">৳999</span>
+                  <span class="prod-save">৳501 সাশ্রয়</span>
+                </div>
+                <button
+                  class="prod-add-btn"
+                  id="pbtn-3"
+                  onclick="toggleFromCard(3)"
+                >
+                  <span>🛒 কার্টে যোগ করুন</span>
+                </button>
+                <div class="prod-qty-ctrl" id="pqc-3">
+                  <button class="prod-qty-btn" onclick="chgQty(3, -1)">
+                    −
+                  </button>
+                  <span class="prod-qty-val" id="pqv-3">1</span>
+                  <button class="prod-qty-btn" onclick="chgQty(3, 1)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- mug-4 -->
+          <div class="col-6 col-md-3">
+            <div class="prod-card sa" id="pcard-4">
+              <div class="prod-badge">-33%</div>
+              <div class="prod-img-wrap">
+                <img
+                  class="prod-img"
+                  src="media/mug-4.jpeg"
+                  alt="Minimalist White Double Layer Mug"
+                  onerror="
+                    this.src =
+                      'https://placehold.co/400x400/dbeafe/1d4ed8?text=Minimalist+White+Mug'
+                  "
+                />
+              </div>
+              <div class="prod-body">
+                <h3 class="prod-name">Minimalist White Double Layer Mug</h3>
+                <div class="prod-price-row">
+                  <span class="prod-orig">৳1500</span>
+                  <span class="prod-sale">৳999</span>
+                  <span class="prod-save">৳501 সাশ্রয়</span>
+                </div>
+                <button
+                  class="prod-add-btn"
+                  id="pbtn-4"
+                  onclick="toggleFromCard(4)"
+                >
+                  <span>🛒 কার্টে যোগ করুন</span>
+                </button>
+                <div class="prod-qty-ctrl" id="pqc-4">
+                  <button class="prod-qty-btn" onclick="chgQty(4, -1)">
+                    −
+                  </button>
+                  <span class="prod-qty-val" id="pqv-4">1</span>
+                  <button class="prod-qty-btn" onclick="chgQty(4, 1)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-4 sa">
+          <a
+            href="#Checkout"
+            class="btn-order-main"
+            style="display: inline-flex; width: auto; padding: 13px 32px"
+            >🛒 সব পণ্য দেখুন ও অর্ডার করুন ↓</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FEATURES (image 1 style) ══ -->
+    <section class="features-section">
+      <div class="container">
+        <div class="sec-title-wrap sa">
+          <div class="sec-label">⭐ কেন আমাদের মগ?</div>
+          <h2 class="sec-h2">প্রতিটি মগে <span>বিশেষ বৈশিষ্ট্য</span></h2>
+        </div>
+        <div class="row g-3 g-md-4 justify-content-center mb-4">
+          <div class="col-6 col-md-4 col-lg-2">
+            <div class="feat-card sa">
+              <div class="feat-icon-wrap blue">🌡️</div>
+              <div class="feat-title">ডাবল ওয়াল ইনসুলেশন</div>
+              <div class="feat-sub">
+                হাত পোড়ে না, ভেতরের পানীয় গরম থাকে দীর্ঘক্ষণ
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2">
+            <div class="feat-card sa">
+              <div class="feat-icon-wrap red">🔥</div>
+              <div class="feat-title">হিট-রেজিস্ট্যান্ট গ্লাস</div>
+              <div class="feat-sub">বোরোসিলিকেট গ্লাসে তৈরি, ফাটে না সহজে</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2">
+            <div class="feat-card sa">
+              <div class="feat-icon-wrap blue">🍽️</div>
+              <div class="feat-title">ডিশওয়াশার সেফ</div>
+              <div class="feat-sub">
+                সহজে ধোয়া যায়, মাইক্রোওয়েভেও ব্যবহারযোগ্য
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2">
+            <div class="feat-card sa">
+              <div class="feat-icon-wrap red">🛡️</div>
+              <div class="feat-title">BPA-Free ও নিরাপদ</div>
+              <div class="feat-sub">খাদ্য-নিরাপদ উপকরণে তৈরি</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2">
+            <div class="feat-card sa">
+              <div class="feat-icon-wrap blue">🎁</div>
+              <div class="feat-title">গিফট বক্স</div>
+              <div class="feat-sub">সুন্দর উপহার বাক্সে প্যাকেজিং করা</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2">
+            <div class="feat-card sa">
+              <div class="feat-icon-wrap red">✨</div>
+              <div class="feat-title">এলিগ্যান্ট ডিজাইন</div>
+              <div class="feat-sub">ঘর ও অফিস — দুই জায়গার জন্যই মানানসই</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-group sa">
+          <a href="#Checkout" class="btn-order-main">🛒 এখনই অর্ডার করুন</a>
+          <div class="cta-sub-row">
+            <a
+              href="https://wa.link/jwi3gl"
+              target="_blank"
+              class="btn-wa-outline"
+              >💬 হোয়াটসঅ্যাপ</a
+            >
+            <a href="tel:09643330000" class="btn-call-outline">📞 কল করুন</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div
+      class="vid-modal"
+      id="vidModal"
+      onclick="if (event.target === this) closeVideo();"
+    >
+      <div class="vid-modal-box">
+        <button class="vid-modal-close" onclick="closeVideo()">✕</button>
+        <iframe
+          id="vidFrame"
+          src=""
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- ══ HOW TO USE (image 2 style) ══ -->
+    <section class="howto-section">
+      <div class="container howto-inner">
+        <div class="sec-title-wrap sa">
+          <div class="sec-label on-dark">🛠️ যত্ন ও ব্যবহার</div>
+          <h2 class="sec-h2 on-dark">
+            মাত্র কয়েকটি সহজ ধাপে <span>মগটি ব্যবহার করুন</span>
+          </h2>
+          <p class="sec-desc on-dark">
+            দীর্ঘদিন ভালো রাখতে এই ধাপগুলো অনুসরণ করুন
+          </p>
+        </div>
+
+        <!-- Mobile / tablet: simple single-column timeline -->
+        <div class="howto-line d-lg-none">
+          <div class="howto-step sa">
+            <div class="howto-num">১</div>
+            <div class="howto-card">
+              <strong>প্যাকেট খুলুন</strong
+              ><span
+                >বাক্স থেকে মগটি সাবধানে বের করুন এবং কোনো ফাটল আছে কিনা পরীক্ষা
+                করুন।</span
+              >
+            </div>
+          </div>
+          <div class="howto-step sa">
+            <div class="howto-num">২</div>
+            <div class="howto-card">
+              <strong>প্রথমবার ধুয়ে নিন</strong
+              ><span
+                >ব্যবহারের আগে হালকা গরম পানি ও লিকুইড সোপ দিয়ে ধুয়ে
+                নিন।</span
+              >
+            </div>
+          </div>
+          <div class="howto-step sa">
+            <div class="howto-num">৩</div>
+            <div class="howto-card">
+              <strong>পানীয় ঢালুন</strong
+              ><span
+                >চা, কফি বা যেকোনো গরম/ঠান্ডা পানীয় ঢালুন — বাইরের অংশ থাকবে
+                হালকা গরম।</span
+              >
+            </div>
+          </div>
+          <div class="howto-step sa">
+            <div class="howto-num">৪</div>
+            <div class="howto-card">
+              <strong>নিশ্চিন্তে উপভোগ করুন</strong
+              ><span>ডাবল লেয়ার ডিজাইনের কারণে হাত পোড়ার ভয় নেই।</span>
+            </div>
+          </div>
+          <div class="howto-step sa">
+            <div class="howto-num">৫</div>
+            <div class="howto-card">
+              <strong>যত্ন নিন</strong
+              ><span
+                >ব্যবহারের পর ডিশওয়াশার বা হাত দিয়ে হালকাভাবে ধুয়ে
+                রাখুন।</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Desktop: zigzag timeline (odd steps left, even steps right) -->
+        <div class="howto-timeline d-none d-lg-block">
+          <div class="howto-row sa">
+            <div class="howto-col left">
+              <div class="howto-card">
+                <strong>প্যাকেট খুলুন</strong
+                ><span
+                  >বাক্স থেকে মগটি সাবধানে বের করুন এবং কোনো ফাটল আছে কিনা
+                  পরীক্ষা করুন।</span
+                >
+              </div>
+            </div>
+            <div class="howto-num">১</div>
+            <div class="howto-col right"></div>
+          </div>
+          <div class="howto-row sa">
+            <div class="howto-col left"></div>
+            <div class="howto-num">২</div>
+            <div class="howto-col right">
+              <div class="howto-card">
+                <strong>প্রথমবার ধুয়ে নিন</strong
+                ><span
+                  >ব্যবহারের আগে হালকা গরম পানি ও লিকুইড সোপ দিয়ে ধুয়ে
+                  নিন।</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="howto-row sa">
+            <div class="howto-col left">
+              <div class="howto-card">
+                <strong>পানীয় ঢালুন</strong
+                ><span
+                  >চা, কফি বা যেকোনো গরম/ঠান্ডা পানীয় ঢালুন — বাইরের অংশ থাকবে
+                  হালকা গরম।</span
+                >
+              </div>
+            </div>
+            <div class="howto-num">৩</div>
+            <div class="howto-col right"></div>
+          </div>
+          <div class="howto-row sa">
+            <div class="howto-col left"></div>
+            <div class="howto-num">৪</div>
+            <div class="howto-col right">
+              <div class="howto-card">
+                <strong>নিশ্চিন্তে উপভোগ করুন</strong
+                ><span>ডাবল লেয়ার ডিজাইনের কারণে হাত পোড়ার ভয় নেই।</span>
+              </div>
+            </div>
+          </div>
+          <div class="howto-row sa">
+            <div class="howto-col left">
+              <div class="howto-card">
+                <strong>যত্ন নিন</strong
+                ><span
+                  >ব্যবহারের পর ডিশওয়াশার বা হাত দিয়ে হালকাভাবে ধুয়ে
+                  রাখুন।</span
+                >
+              </div>
+            </div>
+            <div class="howto-num">৫</div>
+            <div class="howto-col right"></div>
+          </div>
+        </div>
+
+        <div class="cta-group sa mt-4">
+          <a href="#Checkout" class="btn-order-main">🛒 এখনই অর্ডার করুন</a>
+          <div class="cta-sub-row cta-sub-row-white">
+            <a
+              href="https://wa.link/jwi3gl"
+              target="_blank"
+              class="btn-wa-outline"
+              >💬 হোয়াটসঅ্যাপ</a
+            >
+            <a href="tel:09643330000" class="btn-call-outline">📞 কল করুন</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FINAL CTA ══ -->
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="cta-h2 sa">
+          আজই অর্ডার করুন!<br />আপনার প্রিয়জনকে সারপ্রাইজ দিন 🎁
+        </h2>
+        <p class="cta-sub sa">
+          সারা বাংলাদেশে দ্রুত ডেলিভারি — Cash on Delivery সুবিধায়
+        </p>
+        <div class="cta-group sa">
+          <a href="#Checkout" class="btn-cta-main-white">🛒 এখনই অর্ডার করুন</a>
+          <div class="cta-sub-row cta-sub-row-white">
+            <a
+              href="https://wa.link/jwi3gl"
+              target="_blank"
+              class="btn-wa-outline"
+              >💬 হোয়াটসঅ্যাপ</a
+            >
+            <a href="tel:09643330000" class="btn-call-outline">📞 কল করুন</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CHECKOUT ══ -->
+    <div id="Checkout">
+      <div class="co-wrap">
+        <h2 class="co-heading">🛒 Your Products</h2>
+        <p class="co-sub">
+          পছন্দের মগটি সিলেক্ট করুন, তারপর নিচে ফর্ম পূরণ করুন
+        </p>
+
+        <div class="co-cart-grid">
+          <div
+            class="co-cart-item in-cart"
+            id="ci-1"
+            onclick="cardRowClick(event, 1)"
+          >
+            <input
+              type="checkbox"
+              class="co-cart-cb"
+              id="ccb-1"
+              checked
+              onchange="toggleItem(1)"
+            />
+            <img
+              class="co-cart-img"
+              src="media/mug-1.jpeg"
+              onerror="this.style.opacity = 0.4"
+              alt="Pastel Flower Double Layer Mug"
+            />
+            <div class="co-cart-body">
+              <div class="co-cart-name">Pastel Flower Double Layer Mug</div>
+              <div>
+                <span class="co-cart-orig">৳1500</span
+                ><span class="co-cart-price">৳1099</span>
+              </div>
+              <div class="co-cart-qw">
+                <button class="co-cart-qb" onclick="chgItemQty(1, -1)">
+                  −
+                </button>
+                <input
+                  type="number"
+                  class="co-cart-qi"
+                  id="ciq-1"
+                  value="1"
+                  min="1"
+                  onchange="renderSummary()"
+                />
+                <button class="co-cart-qb" onclick="chgItemQty(1, 1)">+</button>
+              </div>
+            </div>
+            <div class="co-cart-right">
+              <span class="co-cart-total" id="cit-1">৳1099</span>
+            </div>
+          </div>
+          <div class="co-cart-item" id="ci-2" onclick="cardRowClick(event, 2)">
+            <input
+              type="checkbox"
+              class="co-cart-cb"
+              id="ccb-2"
+              onchange="toggleItem(2)"
+            />
+            <img
+              class="co-cart-img"
+              src="media/mug-2.jpeg"
+              onerror="this.style.opacity = 0.4"
+              alt="Blue Wave Double Layer Mug"
+            />
+            <div class="co-cart-body">
+              <div class="co-cart-name">Blue Wave Double Layer Mug</div>
+              <div>
+                <span class="co-cart-orig">৳1500</span
+                ><span class="co-cart-price">৳1099</span>
+              </div>
+              <div class="co-cart-qw">
+                <button class="co-cart-qb" onclick="chgItemQty(2, -1)">
+                  −
+                </button>
+                <input
+                  type="number"
+                  class="co-cart-qi"
+                  id="ciq-2"
+                  value="1"
+                  min="1"
+                  onchange="renderSummary()"
+                />
+                <button class="co-cart-qb" onclick="chgItemQty(2, 1)">+</button>
+              </div>
+            </div>
+            <div class="co-cart-right">
+              <span class="co-cart-total" id="cit-2">৳1099</span>
+            </div>
+          </div>
+          <div class="co-cart-item" id="ci-3" onclick="cardRowClick(event, 3)">
+            <input
+              type="checkbox"
+              class="co-cart-cb"
+              id="ccb-3"
+              onchange="toggleItem(3)"
+            />
+            <img
+              class="co-cart-img"
+              src="media/mug-3.jpeg"
+              onerror="this.style.opacity = 0.4"
+              alt="Rose Gold Double Layer Mug"
+            />
+            <div class="co-cart-body">
+              <div class="co-cart-name">Rose Gold Double Layer Mug</div>
+              <div>
+                <span class="co-cart-orig">৳1500</span
+                ><span class="co-cart-price">৳999</span>
+              </div>
+              <div class="co-cart-qw">
+                <button class="co-cart-qb" onclick="chgItemQty(3, -1)">
+                  −
+                </button>
+                <input
+                  type="number"
+                  class="co-cart-qi"
+                  id="ciq-3"
+                  value="1"
+                  min="1"
+                  onchange="renderSummary()"
+                />
+                <button class="co-cart-qb" onclick="chgItemQty(3, 1)">+</button>
+              </div>
+            </div>
+            <div class="co-cart-right">
+              <span class="co-cart-total" id="cit-3">৳999</span>
+            </div>
+          </div>
+          <div class="co-cart-item" id="ci-4" onclick="cardRowClick(event, 4)">
+            <input
+              type="checkbox"
+              class="co-cart-cb"
+              id="ccb-4"
+              onchange="toggleItem(4)"
+            />
+            <img
+              class="co-cart-img"
+              src="media/mug-4.jpeg"
+              onerror="this.style.opacity = 0.4"
+              alt="Minimalist White Double Layer Mug"
+            />
+            <div class="co-cart-body">
+              <div class="co-cart-name">Minimalist White Double Layer Mug</div>
+              <div>
+                <span class="co-cart-orig">৳1500</span
+                ><span class="co-cart-price">৳999</span>
+              </div>
+              <div class="co-cart-qw">
+                <button class="co-cart-qb" onclick="chgItemQty(4, -1)">
+                  −
+                </button>
+                <input
+                  type="number"
+                  class="co-cart-qi"
+                  id="ciq-4"
+                  value="1"
+                  min="1"
+                  onchange="renderSummary()"
+                />
+                <button class="co-cart-qb" onclick="chgItemQty(4, 1)">+</button>
+              </div>
+            </div>
+            <div class="co-cart-right">
+              <span class="co-cart-total" id="cit-4">৳999</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="co-cols d-flex flex-column flex-md-row gap-4">
+          <div class="co-left flex-grow-1">
+            <div class="ship-section">
+              <div class="ship-h">🚚 ডেলিভারি এলাকা বেছে নিন</div>
+              <label class="ship-lbl active" id="sl-i">
+                <input
+                  type="radio"
+                  name="ship"
+                  value="in"
+                  checked
+                  onchange="setShip(60, 'in')"
+                />
+                <div class="ship-icon">🏙️</div>
+                <div class="ship-info">
+                  <strong>ঢাকার ভিতরে</strong
+                  ><!--<span>ডেলিভারি চার্জ: ৳৬০</span>-->
+                </div>
+              </label>
+              <label class="ship-lbl" id="sl-o">
+                <input
+                  type="radio"
+                  name="ship"
+                  value="out"
+                  onchange="setShip(110, 'out')"
+                />
+                <div class="ship-icon">🗺️</div>
+                <div class="ship-info">
+                  <strong>ঢাকার বাহিরে</strong
+                  ><!--<span>ডেলিভারি চার্জ: ৳১১০</span>-->
+                </div>
+              </label>
+            </div>
+
+            <div class="cf">
+              <label>আপনার নাম লিখুন <span class="r">*</span></label>
+              <input
+                type="text"
+                id="fn"
+                placeholder="Enter your full name"
+                autocomplete="given-name"
+              />
+              <div class="emsg" id="fe">আপনার সম্পূর্ণ নাম টি প্রয়োজন।</div>
+            </div>
+            <div class="cf">
+              <label>আপনার ফোন নাম্বারটি লিখুন <span class="r">*</span></label>
+              <input
+                type="tel"
+                id="ph"
+                placeholder="01xxxxxxxxx"
+                autocomplete="tel"
+              />
+              <div class="emsg" id="pe">আপনার ফোন নাম্বারটি প্রয়োজন।</div>
+            </div>
+            <div class="cf">
+              <label
+                >আপনার সম্পূর্ণ ঠিকানাটি লিখুন <span class="r">*</span></label
+              >
+              <textarea
+                id="ad"
+                placeholder="Enter your full address"
+                autocomplete="street-address"
+                rows="2"
+              ></textarea>
+              <div class="emsg" id="ae">আপনার সম্পূর্ণ ঠিকানাটি প্রয়োজন।</div>
+            </div>
+          </div>
+
+          <div
+            class="co-right"
+            style="width: 100%; max-width: 440px; flex-shrink: 0"
+          >
+            <div class="ord-lbl">📋 অর্ডার সামারি</div>
+            <div class="ord-box">
+              <table class="otbl">
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Subtotal</th>
+                  </tr>
+                </thead>
+                <tbody id="otb"></tbody>
+                <tfoot id="otf">
+                  <tr>
+                    <td>Subtotal</td>
+                    <td>৳<span id="st">0.00</span></td>
+                  </tr>
+                  <tr>
+                    <td>Delivery</td>
+                    <td><span id="dc" class="saf">৳60.00</span></td>
+                  </tr>
+                  <tr class="ttl-row">
+                    <td>Total</td>
+                    <td>৳<span id="tt">60.00</span></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <div class="pay-box">
+              <div class="pay-hdr">
+                <input type="radio" checked readonly /><span
+                  >💵 Cash on Delivery</span
+                >
+              </div>
+              <div class="pay-body">ডেলিভারির সময় টাকা পরিশোধ করুন।</div>
+            </div>
+            <p class="co-prv">
+              আপনার তথ্য শুধুমাত্র অর্ডার প্রসেস করার জন্য ব্যবহার করা হবে।
+              <a href="https://www.prodhan.com/privacy-policy"
+                >Privacy Policy</a
+              >
+            </p>
+            <button class="co-btn" id="pb" onclick="placeOrder()">
+              <?xml version="1.0" encoding="utf-8"?>
+              <!-- License: Apache. Made by Iconscout: https://github.com/Iconscout/unicons -->
+              <svg
+                fill="#ffffff"
+                width="24px"
+                height="24px"
+                viewBox="0 0 24 24"
+                id="Layer_1"
+                data-name="Layer 1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.5,19A1.5,1.5,0,1,0,10,20.5,1.5,1.5,0,0,0,8.5,19ZM19,16H7a1,1,0,0,1,0-2h8.49121A3.0132,3.0132,0,0,0,18.376,11.82422L19.96143,6.2749A1.00009,1.00009,0,0,0,19,5H6.73907A3.00666,3.00666,0,0,0,3.92139,3H3A1,1,0,0,0,3,5h.92139a1.00459,1.00459,0,0,1,.96142.7251l.15552.54474.00024.00506L6.6792,12.01709A3.00006,3.00006,0,0,0,7,18H19a1,1,0,0,0,0-2ZM17.67432,7l-1.2212,4.27441A1.00458,1.00458,0,0,1,15.49121,12H8.75439l-.25494-.89221L7.32642,7ZM16.5,19A1.5,1.5,0,1,0,18,20.5,1.5,1.5,0,0,0,16.5,19Z"
+                />
+              </svg>
+              অর্ডার করুন &nbsp;৳<span id="bt">60.00</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile sticky -->
+    <div class="mobile-sticky">
+      <div class="mobile-total">
+        <small>মোট পরিমাণ</small>৳<span id="mbt">60.00</span>
+      </div>
+      <button class="mobile-order-btn" id="mpb" onclick="placeOrder()">
+        🛒 অর্ডার করুন
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+        >
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
+        </svg>
+      </button>
+    </div>
+
+    <script>
+      /* ══ PRODUCT DATA & CART LOGIC — defined first, isolated from any other script below ══ */
+      const PRODS = {
+        1: {
+          name: "Pastel Flower Double Layer Mug",
+          price: 1099,
+          img: "media/mug-1.jpeg",
+        },
+        2: {
+          name: "Blue Wave Double Layer Mug",
+          price: 1099,
+          img: "media/mug-2.jpeg",
+        },
+        3: {
+          name: "Rose Gold Double Layer Mug",
+          price: 999,
+          img: "media/mug-3.jpeg",
+        },
+        4: {
+          name: "Minimalist White Double Layer Mug",
+          price: 999,
+          img: "media/mug-4.jpeg",
+        },
+      };
+      /* Pastel Flower (id 1) pre-selected by default */
+      let SELECTED = { 1: { qty: 1 } };
+      let shipCost = 60,
+        shipMode = "in";
+
+      /* Single source of truth for selecting/deselecting a product.
+       Used by: product-grid add button, checkout checkbox, and click-anywhere-on-card. */
+      function setSelected(id, selected) {
+        const cb = document.getElementById("ccb-" + id);
+        const ci = document.getElementById("ci-" + id);
+        const card = document.getElementById("pcard-" + id);
+        const pbtn = document.getElementById("pbtn-" + id);
+        if (cb) cb.checked = selected;
+        if (selected) {
+          const existingQty =
+            parseInt(document.getElementById("ciq-" + id)?.value) || 1;
+          SELECTED[id] = { qty: existingQty };
+          ci?.classList.add("in-cart");
+          card?.classList.add("selected");
+          if (pbtn) {
+            pbtn.classList.add("added");
+            const s = pbtn.querySelector("span");
+            if (s) s.textContent = "✓ যোগ হয়েছে";
+          }
+          document.getElementById("pqc-" + id)?.classList.add("show");
+        } else {
+          delete SELECTED[id];
+          ci?.classList.remove("in-cart");
+          card?.classList.remove("selected");
+          if (pbtn) {
+            pbtn.classList.remove("added");
+            const s = pbtn.querySelector("span");
+            if (s) s.textContent = "🛒 কার্টে যোগ করুন";
+          }
+          document.getElementById("pqc-" + id)?.classList.remove("show");
+        }
+        renderSummary();
+      }
+
+      /* Product-grid "কার্টে যোগ করুন" button: toggles this specific product on/off,
+       independent of any other product already in the cart — so multiple mugs
+       with their own quantities can be added at the same time. */
+      function toggleFromCard(id) {
+        setSelected(id, !SELECTED[id]);
+      }
+
+      /* Checkout list checkbox */
+      function toggleItem(id) {
+        const cb = document.getElementById("ccb-" + id);
+        setSelected(id, cb.checked);
+      }
+
+      /* Click anywhere on a checkout product row (except the qty stepper) to select/deselect it */
+      function cardRowClick(e, id) {
+        if (e.target.closest(".co-cart-qw")) return;
+        if (e.target.tagName === "INPUT" && e.target.type === "checkbox")
+          return;
+        setSelected(id, !SELECTED[id]);
+      }
+
+      function chgQty(id, d) {
+        if (!SELECTED[id]) return;
+        SELECTED[id].qty = Math.max(1, SELECTED[id].qty + d);
+        document.getElementById("pqv-" + id).textContent = SELECTED[id].qty;
+        document.getElementById("ciq-" + id).value = SELECTED[id].qty;
+        renderSummary();
+      }
+
+      function chgItemQty(id, d) {
+        const el = document.getElementById("ciq-" + id);
+        const v = Math.max(1, (parseInt(el.value) || 1) + d);
+        el.value = v;
+        if (SELECTED[id]) SELECTED[id].qty = v;
+        document.getElementById("pqv-" + id) &&
+          (document.getElementById("pqv-" + id).textContent = v);
+        const p = PRODS[id];
+        document.getElementById("cit-" + id).textContent =
+          "৳" + (p.price * v).toFixed(0);
+        renderSummary();
+      }
+
+      function setShip(cost, mode) {
+        shipCost = cost;
+        shipMode = mode;
+        document
+          .getElementById("sl-i")
+          .classList.toggle("active", mode === "in");
+        document
+          .getElementById("sl-o")
+          .classList.toggle("active", mode === "out");
+        renderSummary();
+      }
+
+      function fmt(n) {
+        return n.toFixed(2);
+      }
+
+      function renderSummary() {
+        const tb = document.getElementById("otb");
+        const ids = Object.keys(SELECTED);
+        let sub = 0,
+          rows = "";
+        ids.forEach((id) => {
+          const p = PRODS[id];
+          const qty = parseInt(document.getElementById("ciq-" + id).value) || 1;
+          if (SELECTED[id]) SELECTED[id].qty = qty;
+          const ln = p.price * qty;
+          sub += ln;
+          rows += `<tr><td><div class="oi-wrap"><img class="oi-img" src="${p.img}" onerror="this.style.opacity=.3"/><div><div class="oi-nm">${p.name}</div><div class="oi-qty">× ${qty}</div></div></div></td><td>৳${fmt(ln)}</td></tr>`;
+          document.getElementById("cit-" + id).textContent =
+            "৳" + ln.toFixed(0);
+        });
+        if (!ids.length)
+          rows =
+            '<tr><td colspan="2" style="text-align:center;padding:20px;color:#94a3b8;font-size:14px">পণ্য সিলেক্ট করুন</td></tr>';
+        tb.innerHTML = rows;
+        const tot = sub + shipCost;
+        document.getElementById("st").textContent = fmt(sub);
+        document.getElementById("dc").innerHTML =
+          shipMode === "in"
+            ? `<span class="saf">৳${fmt(shipCost)}</span>`
+            : `<span class="sap">৳${fmt(shipCost)}</span>`;
+        document.getElementById("tt").textContent = fmt(tot);
+        document.getElementById("bt").textContent = fmt(tot);
+        document.getElementById("mbt").textContent = fmt(tot);
+      }
+
+      function placeOrder() {
+        let ok = true;
+        [
+          { id: "fn", e: "fe" },
+          { id: "ph", e: "pe" },
+          { id: "ad", e: "ae" },
+        ].forEach((f) => {
+          const el = document.getElementById(f.id),
+            em = document.getElementById(f.e);
+          if (!el.value.trim()) {
+            el.classList.add("err");
+            em.classList.add("show");
+            ok = false;
+          } else {
+            el.classList.remove("err");
+            em.classList.remove("show");
+          }
+        });
+        if (!ok) {
+          document
+            .querySelector("#fn")
+            .scrollIntoView({ behavior: "smooth", block: "center" });
+          return;
+        }
+        if (!Object.keys(SELECTED).length) {
+          alert("অন্তত একটি মগ সিলেক্ট করুন।");
+          return;
+        }
+        const items = Object.keys(SELECTED).map((id) => {
+          const qty = parseInt(document.getElementById("ciq-" + id).value) || 1;
+          return { name: PRODS[id].name, qty, price: PRODS[id].price };
+        });
+        try {
+          sessionStorage.setItem(
+            "mili_order",
+            JSON.stringify({
+              number: Math.floor(30000 + Math.random() * 20000),
+              name: document.getElementById("fn").value.trim(),
+              phone: document.getElementById("ph").value.trim(),
+              address: document.getElementById("ad").value.trim(),
+              area: shipMode === "in" ? "ঢাকার ভিতরে" : "ঢাকার বাহিরে",
+              items,
+              shipping: shipCost,
+              shippingLabel: shipMode === "in" ? "ঢাকার ভিতরে" : "ঢাকার বাহিরে",
+            }),
+          );
+        } catch (e) {}
+        const btn = document.getElementById("pb");
+        const mbtn = document.getElementById("mpb");
+        btn.textContent = "⏳ প্রসেস হচ্ছে...";
+        btn.disabled = true;
+        btn.style.animation = "none";
+        mbtn.textContent = "⏳ প্রসেস হচ্ছে...";
+        mbtn.disabled = true;
+        setTimeout(() => {
+          btn.textContent = "✅ অর্ডার সম্পন্ন!";
+          btn.style.background = "linear-gradient(135deg,#16a34a,#15803d)";
+          setTimeout(() => (location.href = "mili-mitag-thankyou.html"), 700);
+        }, 900);
+      }
+
+      ["fn", "ph", "ad"].forEach((id, i) => {
+        document.getElementById(id)?.addEventListener("input", function () {
+          if (this.value.trim()) {
+            this.classList.remove("err");
+            document
+              .getElementById(["fe", "pe", "ae"][i])
+              ?.classList.remove("show");
+          }
+        });
+      });
+
+      renderSummary();
+
+      /* ══ TIMERS — wrapped so any storage/browser quirk here can never break the cart above ══ */
+      try {
+        (function () {
+          const K = "mugTimer_v2";
+          function ge() {
+            let v = null;
+            try {
+              v = localStorage.getItem(K);
+            } catch (e) {}
+            const n = Date.now();
+            if (v && +v > n) return +v;
+            const t =
+              n +
+              (Math.floor(Math.random() * 3) + 1) * 3600000 +
+              Math.random() * 1800000;
+            try {
+              localStorage.setItem(K, t);
+            } catch (e) {}
+            return t;
+          }
+          function pad(n) {
+            return String(n).padStart(2, "0");
+          }
+          function tick() {
+            let r = ge() - Date.now();
+            if (r < 0) {
+              try {
+                localStorage.removeItem(K);
+              } catch (e) {}
+              r = ge() - Date.now();
+            }
+            const set = (id, val) => {
+              const el = document.getElementById(id);
+              if (el) el.textContent = val;
+            };
+            set("th", pad(Math.floor(r / 3600000) % 24));
+            set("tm", pad(Math.floor(r / 60000) % 60));
+            set("ts", pad(Math.floor(r / 1000) % 60));
+            set("ubh", pad(Math.floor(r / 60000) % 60));
+            set("ubm", pad(Math.floor(r / 1000) % 60));
+          }
+          setInterval(tick, 1000);
+          tick();
+        })();
+      } catch (e) {}
+
+      /* ══ SCROLL ANIMATE — wrapped + feature-detected so older/limited browsers still show content ══ */
+      try {
+        if ("IntersectionObserver" in window) {
+          const io = new IntersectionObserver(
+            (es) => {
+              es.forEach((e) => {
+                if (e.isIntersecting) {
+                  e.target.classList.add("vis");
+                  io.unobserve(e.target);
+                }
+              });
+            },
+            { threshold: 0.1, rootMargin: "0px 0px -30px 0px" },
+          );
+          document.querySelectorAll(".sa").forEach((el) => io.observe(el));
+          setTimeout(() => {
+            document.querySelectorAll(".sa:not(.vis)").forEach((el) => {
+              if (el.getBoundingClientRect().top < window.innerHeight)
+                el.classList.add("vis");
+            });
+          }, 80);
+        } else {
+          document
+            .querySelectorAll(".sa")
+            .forEach((el) => el.classList.add("vis"));
+        }
+      } catch (e) {
+        document
+          .querySelectorAll(".sa")
+          .forEach((el) => el.classList.add("vis"));
+      }
+
+      function openVideo(videoId) {
+        document.getElementById("vidFrame").src =
+          "https://www.youtube.com/embed/" + videoId + "?autoplay=1&rel=0";
+        document.getElementById("vidModal").classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+      function closeVideo() {
+        document.getElementById("vidModal").classList.remove("open");
+        document.getElementById("vidFrame").src = "";
+        document.body.style.overflow = "";
+      }
+    </script>
+  </body>
+</html>
