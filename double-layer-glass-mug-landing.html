@@ -1546,7 +1546,7 @@
     <div class="urgency-bar" id="urgencyBar">
       <div class="urgency-inner">
         <span class="urgency-msg"
-          >⚠️ স্টক সীমিত! <strong>৩৩% ছাড়</strong> পেতে অর্ডার করুন</span
+          >⚠️ স্টক সীমিত! <strong>৩০% ছাড়</strong> পেতে অর্ডার করুন</span
         >
         <span class="urgency-timer"
           >⏱ <span id="ubh">00</span>:<span id="ubm">00</span></span
@@ -1599,7 +1599,7 @@
             </p>
 
             <div class="hero-price sa">
-              <span class="orig">৳990</span>
+              <span class="orig">৳1020</span>
               <span class="sale">৳710</span>
               <span class="save">৳501 সাশ্রয়</span>
             </div>
@@ -1674,334 +1674,470 @@
         </div>
 
         <div class="row g-3 g-md-4">
+          <!-- Product 1 -->
+          <div class="col-6 col-md-3">
+            <div class="prod-card sa selected" id="pcard-1">
+              <div class="prod-badge">-30%</div>
+              <div class="prod-hot">🔥 সিলেক্টেড</div>
+              <div class="prod-img-wrap">
+                <img
+                  class="prod-img"
+                  src="media/Pastle Flower Double Layer Mug-01.jpeg"
+                  alt="Pastel Flower Double Layer Mug"
+                />
+              </div>
+              <div class="prod-body">
+                <h3 class="prod-name">Pastel Flower Double Layer Mug</h3>
+                <div class="prod-price-row">
+                  <span class="prod-orig">৳1020</span>
+                  <span class="prod-sale">৳710</span>
+                </div>
+                <button
+                  class="prod-add-btn added"
+                  id="pbtn-1"
+                  onclick="toggleFromCard(1)"
+                >
+                  <span>✓ যোগ হয়েছে</span>
+                </button>
+                <div class="prod-qty-ctrl show" id="pqc-1">
+                  <button class="prod-qty-btn" onclick="chgQty(1, -1)">
+                    −
+                  </button>
+                  <span class="prod-qty-val" id="pqv-1">1</span>
+                  <button class="prod-qty-btn" onclick="chgQty(1, 1)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <!-- Product 1 -->
-  <div class="col-6 col-md-3">
-    <div class="prod-card sa selected" id="pcard-1">
-      <div class="prod-badge">-27%</div>
-      <div class="prod-hot">🔥 সিলেক্টেড</div>
-      <div class="prod-img-wrap">
-        <img class="prod-img" src="media/Pastle Flower Double Layer Mug-01.jpeg" alt="Pastel Flower Double Layer Mug">
-      </div>
-      <div class="prod-body">
-        <h3 class="prod-name">Pastel Flower Double Layer Mug</h3>
-        <div class="prod-price-row">
-          <span class="prod-orig">৳1020</span>
-          <span class="prod-sale">৳710</span>
-        </div>
-        <button class="prod-add-btn added" id="pbtn-1" onclick="toggleFromCard(1)">
-          <span>✓ যোগ হয়েছে</span>
-        </button>
-        <div class="prod-qty-ctrl show" id="pqc-1">
-          <button class="prod-qty-btn" onclick="chgQty(1,-1)">−</button>
-          <span class="prod-qty-val" id="pqv-1">1</span>
-          <button class="prod-qty-btn" onclick="chgQty(1,1)">+</button>
-        </div>
-      </div>
-    </div>
-  </div>
+          <!-- Product 2 -->
+          <div class="col-6 col-md-3">
+            <div class="prod-card sa" id="pcard-2">
+              <div class="prod-badge">-30%</div>
+              <div class="prod-img-wrap">
+                <img
+                  class="prod-img"
+                  src="media/Yellow Blossom Double Layer Mug-2.jpeg"
+                  alt="Yellow Blossom Double Layer Mug"
+                />
+              </div>
+              <div class="prod-body">
+                <h3 class="prod-name">Yellow Blossom Double Layer Mug</h3>
+                <div class="prod-price-row">
+                  <span class="prod-orig">৳1020</span>
+                  <span class="prod-sale">৳710</span>
+                </div>
+                <button
+                  class="prod-add-btn"
+                  id="pbtn-2"
+                  onclick="toggleFromCard(2)"
+                >
+                  <span>🛒 কার্টে যোগ করুন</span>
+                </button>
+                <div class="prod-qty-ctrl" id="pqc-2">
+                  <button class="prod-qty-btn" onclick="chgQty(2, -1)">
+                    −
+                  </button>
+                  <span class="prod-qty-val" id="pqv-2">1</span>
+                  <button class="prod-qty-btn" onclick="chgQty(2, 1)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <!-- Product 2 -->
-  <div class="col-6 col-md-3">
-    <div class="prod-card sa" id="pcard-2">
-      <div class="prod-badge">-27%</div>
-      <div class="prod-img-wrap">
-        <img class="prod-img" src="media/Yellow Blossom Double Layer Mug-2.jpeg" alt="Yellow Blossom Double Layer Mug">
-      </div>
-      <div class="prod-body">
-        <h3 class="prod-name">Yellow Blossom Double Layer Mug</h3>
-        <div class="prod-price-row">
-          <span class="prod-orig">৳990</span>
-          <span class="prod-sale">৳710</span>
-        </div>
-        <button class="prod-add-btn" id="pbtn-2" onclick="toggleFromCard(2)">
-          <span>🛒 কার্টে যোগ করুন</span>
-        </button>
-        <div class="prod-qty-ctrl" id="pqc-2">
-          <button class="prod-qty-btn" onclick="chgQty(2,-1)">−</button>
-          <span class="prod-qty-val" id="pqv-2">1</span>
-          <button class="prod-qty-btn" onclick="chgQty(2,1)">+</button>
-        </div>
-      </div>
-    </div>
-  </div>
+          <!-- Product 3 -->
+          <div class="col-6 col-md-3">
+            <div class="prod-card sa" id="pcard-3">
+              <div class="prod-badge">-30%</div>
+              <div class="prod-img-wrap">
+                <img
+                  class="prod-img"
+                  src="media/Tropical Aurora Double Layer Mug-3 .jpeg"
+                  alt="Tropical Aurora Double Layer Mug"
+                />
+              </div>
+              <div class="prod-body">
+                <h3 class="prod-name">Tropical Aurora Double Layer Mug</h3>
+                <div class="prod-price-row">
+                  <span class="prod-orig">৳1020</span>
+                  <span class="prod-sale">৳710</span>
+                </div>
+                <button
+                  class="prod-add-btn"
+                  id="pbtn-3"
+                  onclick="toggleFromCard(3)"
+                >
+                  <span>🛒 কার্টে যোগ করুন</span>
+                </button>
+                <div class="prod-qty-ctrl" id="pqc-3">
+                  <button class="prod-qty-btn" onclick="chgQty(3, -1)">
+                    −
+                  </button>
+                  <span class="prod-qty-val" id="pqv-3">1</span>
+                  <button class="prod-qty-btn" onclick="chgQty(3, 1)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <!-- Product 3 -->
-  <div class="col-6 col-md-3">
-    <div class="prod-card sa" id="pcard-3">
-      <div class="prod-badge">-33%</div>
-      <div class="prod-img-wrap">
-        <img class="prod-img" src="media/Tropical Aurora Double Layer Mug-3 .jpeg" alt="Tropical Aurora Double Layer Mug">
-      </div>
-      <div class="prod-body">
-        <h3 class="prod-name">Tropical Aurora Double Layer Mug</h3>
-        <div class="prod-price-row">
-          <span class="prod-orig">৳990</span>
-          <span class="prod-sale">৳710</span>
-        </div>
-        <button class="prod-add-btn" id="pbtn-3" onclick="toggleFromCard(3)">
-          <span>🛒 কার্টে যোগ করুন</span>
-        </button>
-        <div class="prod-qty-ctrl" id="pqc-3">
-          <button class="prod-qty-btn" onclick="chgQty(3,-1)">−</button>
-          <span class="prod-qty-val" id="pqv-3">1</span>
-          <button class="prod-qty-btn" onclick="chgQty(3,1)">+</button>
-        </div>
-      </div>
-    </div>
-  </div>
+          <!-- Product 4 -->
+          <div class="col-6 col-md-3">
+            <div class="prod-card sa" id="pcard-4">
+              <div class="prod-badge">-30%</div>
+              <div class="prod-img-wrap">
+                <img
+                  class="prod-img"
+                  src="media/Candy Splash Double Layer Glass-4.jpeg"
+                  alt="Candy Splash Double Layer Glass"
+                />
+              </div>
+              <div class="prod-body">
+                <h3 class="prod-name">Candy Splash Double Layer Glass</h3>
+                <div class="prod-price-row">
+                  <span class="prod-orig">৳990</span>
+                  <span class="prod-sale">৳690</span>
+                </div>
+                <button
+                  class="prod-add-btn"
+                  id="pbtn-4"
+                  onclick="toggleFromCard(4)"
+                >
+                  <span>🛒 কার্টে যোগ করুন</span>
+                </button>
+                <div class="prod-qty-ctrl" id="pqc-4">
+                  <button class="prod-qty-btn" onclick="chgQty(4, -1)">
+                    −
+                  </button>
+                  <span class="prod-qty-val" id="pqv-4">1</span>
+                  <button class="prod-qty-btn" onclick="chgQty(4, 1)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <!-- Product 4 -->
-  <div class="col-6 col-md-3">
-    <div class="prod-card sa" id="pcard-4">
-      <div class="prod-badge">-33%</div>
-      <div class="prod-img-wrap">
-        <img class="prod-img" src="media/Candy Splash Double Layer Glass-4.jpeg" alt="Candy Splash Double Layer Glass">
-      </div>
-      <div class="prod-body">
-        <h3 class="prod-name">Candy Splash Double Layer Glass</h3>
-        <div class="prod-price-row">
-          <span class="prod-orig">৳990</span>
-          <span class="prod-sale">৳690</span>
-        </div>
-        <button class="prod-add-btn" id="pbtn-4" onclick="toggleFromCard(4)">
-          <span>🛒 কার্টে যোগ করুন</span>
-        </button>
-        <div class="prod-qty-ctrl" id="pqc-4">
-          <button class="prod-qty-btn" onclick="chgQty(4,-1)">−</button>
-          <span class="prod-qty-val" id="pqv-4">1</span>
-          <button class="prod-qty-btn" onclick="chgQty(4,1)">+</button>
-        </div>
-      </div>
-    </div>
-  </div>
+          <!-- Product 5 -->
+          <div class="col-6 col-md-3">
+            <div class="prod-card sa" id="pcard-5">
+              <div class="prod-badge">-30%</div>
+              <div class="prod-img-wrap">
+                <img
+                  class="prod-img"
+                  src="media/Cherry Nature Double layer Glass-5.jpeg"
+                  alt="Cherry Nature Double layer Glass"
+                />
+              </div>
+              <div class="prod-body">
+                <h3 class="prod-name">Cherry Nature Double layer Glass</h3>
+                <div class="prod-price-row">
+                  <span class="prod-orig">৳990</span>
+                  <span class="prod-sale">৳690</span>
+                </div>
+                <button
+                  class="prod-add-btn"
+                  id="pbtn-5"
+                  onclick="toggleFromCard(5)"
+                >
+                  <span>🛒 কার্টে যোগ করুন</span>
+                </button>
+                <div class="prod-qty-ctrl" id="pqc-5">
+                  <button class="prod-qty-btn" onclick="chgQty(5, -1)">
+                    −
+                  </button>
+                  <span class="prod-qty-val" id="pqv-5">1</span>
+                  <button class="prod-qty-btn" onclick="chgQty(5, 1)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <!-- Product 5 -->
-  <div class="col-6 col-md-3">
-    <div class="prod-card sa" id="pcard-5">
-      <div class="prod-badge">-33%</div>
-      <div class="prod-img-wrap">
-        <img class="prod-img" src="media/Cherry Nature Double layer Glass-5.jpeg" alt="Cherry Nature Double layer Glass">
-      </div>
-      <div class="prod-body">
-        <h3 class="prod-name">Cherry Nature Double layer Glass</h3>
-        <div class="prod-price-row">
-          <span class="prod-orig">৳990</span>
-          <span class="prod-sale">৳690</span>
-        </div>
-        <button class="prod-add-btn" id="pbtn-5" onclick="toggleFromCard(5)">
-          <span>🛒 কার্টে যোগ করুন</span>
-        </button>
-        <div class="prod-qty-ctrl" id="pqc-5">
-          <button class="prod-qty-btn" onclick="chgQty(5,-1)">−</button>
-          <span class="prod-qty-val" id="pqv-5">1</span>
-          <button class="prod-qty-btn" onclick="chgQty(5,1)">+</button>
-        </div>
-      </div>
-    </div>
-  </div>
+          <!-- Product 6 -->
+          <div class="col-6 col-md-3">
+            <div class="prod-card sa" id="pcard-6">
+              <div class="prod-badge">-30%</div>
+              <div class="prod-img-wrap">
+                <img
+                  class="prod-img"
+                  src="media/Dream Petal Double Layer Mug-6.jpeg"
+                  alt="Dream Petal Double Layer Mug"
+                />
+              </div>
+              <div class="prod-body">
+                <h3 class="prod-name">Dream Petal Double Layer Mug</h3>
+                <div class="prod-price-row">
+                  <span class="prod-orig">৳1020</span>
+                  <span class="prod-sale">৳710</span>
+                </div>
+                <button
+                  class="prod-add-btn"
+                  id="pbtn-6"
+                  onclick="toggleFromCard(6)"
+                >
+                  <span>🛒 কার্টে যোগ করুন</span>
+                </button>
+                <div class="prod-qty-ctrl" id="pqc-6">
+                  <button class="prod-qty-btn" onclick="chgQty(6, -1)">
+                    −
+                  </button>
+                  <span class="prod-qty-val" id="pqv-6">1</span>
+                  <button class="prod-qty-btn" onclick="chgQty(6, 1)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <!-- Product 6 -->
-  <div class="col-6 col-md-3">
-    <div class="prod-card sa" id="pcard-6">
-      <div class="prod-badge">-33%</div>
-      <div class="prod-img-wrap">
-        <img class="prod-img" src="media/Dream Petal Double Layer Mug-6.jpeg" alt="Dream Petal Double Layer Mug">
-      </div>
-      <div class="prod-body">
-        <h3 class="prod-name">Dream Petal Double Layer Mug</h3>
-        <div class="prod-price-row">
-          <span class="prod-orig">৳990</span>
-          <span class="prod-sale">৳710</span>
-        </div>
-        <button class="prod-add-btn" id="pbtn-6" onclick="toggleFromCard(6)">
-          <span>🛒 কার্টে যোগ করুন</span>
-        </button>
-        <div class="prod-qty-ctrl" id="pqc-6">
-          <button class="prod-qty-btn" onclick="chgQty(6,-1)">−</button>
-          <span class="prod-qty-val" id="pqv-6">1</span>
-          <button class="prod-qty-btn" onclick="chgQty(6,1)">+</button>
-        </div>
-      </div>
-    </div>
-  </div>
+          <!-- Product 7 -->
+          <div class="col-6 col-md-3">
+            <div class="prod-card sa" id="pcard-7">
+              <div class="prod-badge">-30%</div>
+              <div class="prod-img-wrap">
+                <img
+                  class="prod-img"
+                  src="media/Prisom Peace Double Layer Mug-7.jpeg"
+                  alt="Prisom Peace Double Layer Mug"
+                />
+              </div>
+              <div class="prod-body">
+                <h3 class="prod-name">Prisom Peace Double Layer Mug</h3>
+                <div class="prod-price-row">
+                  <span class="prod-orig">৳1020</span>
+                  <span class="prod-sale">৳710</span>
+                </div>
+                <button
+                  class="prod-add-btn"
+                  id="pbtn-7"
+                  onclick="toggleFromCard(7)"
+                >
+                  <span>🛒 কার্টে যোগ করুন</span>
+                </button>
+                <div class="prod-qty-ctrl" id="pqc-7">
+                  <button class="prod-qty-btn" onclick="chgQty(7, -1)">
+                    −
+                  </button>
+                  <span class="prod-qty-val" id="pqv-7">1</span>
+                  <button class="prod-qty-btn" onclick="chgQty(7, 1)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <!-- Product 7 -->
-  <div class="col-6 col-md-3">
-    <div class="prod-card sa" id="pcard-7">
-      <div class="prod-badge">-33%</div>
-      <div class="prod-img-wrap">
-        <img class="prod-img" src="media/Prisom Peace Double Layer Mug-7.jpeg" alt="Prisom Peace Double Layer Mug">
-      </div>
-      <div class="prod-body">
-        <h3 class="prod-name">Prisom Peace Double Layer Mug</h3>
-        <div class="prod-price-row">
-          <span class="prod-orig">৳990</span>
-          <span class="prod-sale">৳710</span>
-        </div>
-        <button class="prod-add-btn" id="pbtn-7" onclick="toggleFromCard(7)">
-          <span>🛒 কার্টে যোগ করুন</span>
-        </button>
-        <div class="prod-qty-ctrl" id="pqc-7">
-          <button class="prod-qty-btn" onclick="chgQty(7,-1)">−</button>
-          <span class="prod-qty-val" id="pqv-7">1</span>
-          <button class="prod-qty-btn" onclick="chgQty(7,1)">+</button>
-        </div>
-      </div>
-    </div>
-  </div>
+          <!-- Product 8 -->
+          <div class="col-6 col-md-3">
+            <div class="prod-card sa" id="pcard-8">
+              <div class="prod-badge">-30%</div>
+              <div class="prod-img-wrap">
+                <img
+                  class="prod-img"
+                  src="media/Pinky Sakura Double Layer Mug-8.jpeg"
+                  alt="Pinky Sakura Double Layer Mug"
+                />
+              </div>
+              <div class="prod-body">
+                <h3 class="prod-name">Pinky Sakura Double Layer Mug</h3>
+                <div class="prod-price-row">
+                  <span class="prod-orig">৳990</span>
+                  <span class="prod-sale">৳690</span>
+                </div>
+                <button
+                  class="prod-add-btn"
+                  id="pbtn-8"
+                  onclick="toggleFromCard(8)"
+                >
+                  <span>🛒 কার্টে যোগ করুন</span>
+                </button>
+                <div class="prod-qty-ctrl" id="pqc-8">
+                  <button class="prod-qty-btn" onclick="chgQty(8, -1)">
+                    −
+                  </button>
+                  <span class="prod-qty-val" id="pqv-8">1</span>
+                  <button class="prod-qty-btn" onclick="chgQty(8, 1)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <!-- Product 8 -->
-  <div class="col-6 col-md-3">
-    <div class="prod-card sa" id="pcard-8">
-      <div class="prod-badge">-33%</div>
-      <div class="prod-img-wrap">
-        <img class="prod-img" src="media/Pinky Sakura Double Layer Mug-8.jpeg" alt="Pinky Sakura Double Layer Mug">
-      </div>
-      <div class="prod-body">
-        <h3 class="prod-name">Pinky Sakura Double Layer Mug</h3>
-        <div class="prod-price-row">
-          <span class="prod-orig">৳990</span>
-          <span class="prod-sale">৳690</span>
-        </div>
-        <button class="prod-add-btn" id="pbtn-8" onclick="toggleFromCard(8)">
-          <span>🛒 কার্টে যোগ করুন</span>
-        </button>
-        <div class="prod-qty-ctrl" id="pqc-8">
-          <button class="prod-qty-btn" onclick="chgQty(8,-1)">−</button>
-          <span class="prod-qty-val" id="pqv-8">1</span>
-          <button class="prod-qty-btn" onclick="chgQty(8,1)">+</button>
-        </div>
-      </div>
-    </div>
-  </div>
+          <!-- Product 9 -->
+          <div class="col-6 col-md-3">
+            <div class="prod-card sa" id="pcard-9">
+              <div class="prod-badge">-30%</div>
+              <div class="prod-img-wrap">
+                <img
+                  class="prod-img"
+                  src="media/Feather Mist Double Layer Mug-9.jpeg"
+                  alt="Feather Mist Double Layer Mug"
+                />
+              </div>
+              <div class="prod-body">
+                <h3 class="prod-name">Feather Mist Double Layer Mug</h3>
+                <div class="prod-price-row">
+                  <span class="prod-orig">৳1020</span>
+                  <span class="prod-sale">৳710</span>
+                </div>
+                <button
+                  class="prod-add-btn"
+                  id="pbtn-9"
+                  onclick="toggleFromCard(9)"
+                >
+                  <span>🛒 কার্টে যোগ করুন</span>
+                </button>
+                <div class="prod-qty-ctrl" id="pqc-9">
+                  <button class="prod-qty-btn" onclick="chgQty(9, -1)">
+                    −
+                  </button>
+                  <span class="prod-qty-val" id="pqv-9">1</span>
+                  <button class="prod-qty-btn" onclick="chgQty(9, 1)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <!-- Product 9 -->
-  <div class="col-6 col-md-3">
-    <div class="prod-card sa" id="pcard-9">
-      <div class="prod-badge">-33%</div>
-      <div class="prod-img-wrap">
-        <img class="prod-img" src="media/Feather Mist Double Layer Mug-9.jpeg" alt="Feather Mist Double Layer Mug">
-      </div>
-      <div class="prod-body">
-        <h3 class="prod-name">Feather Mist Double Layer Mug</h3>
-        <div class="prod-price-row">
-          <span class="prod-orig">৳990</span>
-          <span class="prod-sale">৳710</span>
-        </div>
-        <button class="prod-add-btn" id="pbtn-9" onclick="toggleFromCard(9)">
-          <span>🛒 কার্টে যোগ করুন</span>
-        </button>
-        <div class="prod-qty-ctrl" id="pqc-9">
-          <button class="prod-qty-btn" onclick="chgQty(9,-1)">−</button>
-          <span class="prod-qty-val" id="pqv-9">1</span>
-          <button class="prod-qty-btn" onclick="chgQty(9,1)">+</button>
-        </div>
-      </div>
-    </div>
-  </div>
+          <!-- Product 10 -->
+          <div class="col-6 col-md-3">
+            <div class="prod-card sa" id="pcard-10">
+              <div class="prod-badge">-30%</div>
+              <div class="prod-img-wrap">
+                <img
+                  class="prod-img"
+                  src="media/Mint Blossom Double Layer Mug-10.jpeg"
+                  alt="Mint Blossom Double Layer Mug"
+                />
+              </div>
+              <div class="prod-body">
+                <h3 class="prod-name">Mint Blossom Double Layer Mug</h3>
+                <div class="prod-price-row">
+                  <span class="prod-orig">৳1020</span>
+                  <span class="prod-sale">৳710</span>
+                </div>
+                <button
+                  class="prod-add-btn"
+                  id="pbtn-10"
+                  onclick="toggleFromCard(10)"
+                >
+                  <span>🛒 কার্টে যোগ করুন</span>
+                </button>
+                <div class="prod-qty-ctrl" id="pqc-10">
+                  <button class="prod-qty-btn" onclick="chgQty(10, -1)">
+                    −
+                  </button>
+                  <span class="prod-qty-val" id="pqv-10">1</span>
+                  <button class="prod-qty-btn" onclick="chgQty(10, 1)">
+                    +
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <!-- Product 10 -->
-  <div class="col-6 col-md-3">
-    <div class="prod-card sa" id="pcard-10">
-      <div class="prod-badge">-33%</div>
-      <div class="prod-img-wrap">
-        <img class="prod-img" src="media/Mint Blossom Double Layer Mug-10.jpeg" alt="Mint Blossom Double Layer Mug">
-      </div>
-      <div class="prod-body">
-        <h3 class="prod-name">Mint Blossom Double Layer Mug</h3>
-        <div class="prod-price-row">
-          <span class="prod-orig">৳990</span>
-          <span class="prod-sale">৳710</span>
-        </div>
-        <button class="prod-add-btn" id="pbtn-10" onclick="toggleFromCard(10)">
-          <span>🛒 কার্টে যোগ করুন</span>
-        </button>
-        <div class="prod-qty-ctrl" id="pqc-10">
-          <button class="prod-qty-btn" onclick="chgQty(10,-1)">−</button>
-          <span class="prod-qty-val" id="pqv-10">1</span>
-          <button class="prod-qty-btn" onclick="chgQty(10,1)">+</button>
-        </div>
-      </div>
-    </div>
-  </div>
+          <!-- Product 11 -->
+          <div class="col-6 col-md-3">
+            <div class="prod-card sa" id="pcard-11">
+              <div class="prod-badge">-30%</div>
+              <div class="prod-img-wrap">
+                <img
+                  class="prod-img"
+                  src="media/Layer Blush Double Layer Mug-11.jpeg"
+                  alt="Layer Blush Double Layer Mug"
+                />
+              </div>
+              <div class="prod-body">
+                <h3 class="prod-name">Layer Blush Double Layer Mug</h3>
+                <div class="prod-price-row">
+                  <span class="prod-orig">৳1020</span>
+                  <span class="prod-sale">৳710</span>
+                </div>
+                <button
+                  class="prod-add-btn"
+                  id="pbtn-11"
+                  onclick="toggleFromCard(11)"
+                >
+                  <span>🛒 কার্টে যোগ করুন</span>
+                </button>
+                <div class="prod-qty-ctrl" id="pqc-11">
+                  <button class="prod-qty-btn" onclick="chgQty(11, -1)">
+                    −
+                  </button>
+                  <span class="prod-qty-val" id="pqv-11">1</span>
+                  <button class="prod-qty-btn" onclick="chgQty(11, 1)">
+                    +
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <!-- Product 11 -->
-  <div class="col-6 col-md-3">
-    <div class="prod-card sa" id="pcard-11">
-      <div class="prod-badge">-33%</div>
-      <div class="prod-img-wrap">
-        <img class="prod-img" src="media/Layer Blush Double Layer Mug-11.jpeg" alt="Layer Blush Double Layer Mug">
-      </div>
-      <div class="prod-body">
-        <h3 class="prod-name">Layer Blush Double Layer Mug</h3>
-        <div class="prod-price-row">
-          <span class="prod-orig">৳990</span>
-          <span class="prod-sale">৳710</span>
-        </div>
-        <button class="prod-add-btn" id="pbtn-11" onclick="toggleFromCard(11)">
-          <span>🛒 কার্টে যোগ করুন</span>
-        </button>
-        <div class="prod-qty-ctrl" id="pqc-11">
-          <button class="prod-qty-btn" onclick="chgQty(11,-1)">−</button>
-          <span class="prod-qty-val" id="pqv-11">1</span>
-          <button class="prod-qty-btn" onclick="chgQty(11,1)">+</button>
-        </div>
-      </div>
-    </div>
-  </div>
+          <!-- Product 12 -->
+          <div class="col-6 col-md-3">
+            <div class="prod-card sa" id="pcard-12">
+              <div class="prod-badge">-30%</div>
+              <div class="prod-img-wrap">
+                <img
+                  class="prod-img"
+                  src="media/Double Layer Coffee Mug-12.png"
+                  alt="Double Layer Coffee Mug"
+                />
+              </div>
+              <div class="prod-body">
+                <h3 class="prod-name">Double Layer Coffee Mug</h3>
+                <div class="prod-price-row">
+                  <span class="prod-orig">৳990</span>
+                  <span class="prod-sale">৳690</span>
+                </div>
+                <button
+                  class="prod-add-btn"
+                  id="pbtn-12"
+                  onclick="toggleFromCard(12)"
+                >
+                  <span>🛒 কার্টে যোগ করুন</span>
+                </button>
+                <div class="prod-qty-ctrl" id="pqc-12">
+                  <button class="prod-qty-btn" onclick="chgQty(12, -1)">
+                    −
+                  </button>
+                  <span class="prod-qty-val" id="pqv-12">1</span>
+                  <button class="prod-qty-btn" onclick="chgQty(12, 1)">
+                    +
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <!-- Product 12 -->
-  <div class="col-6 col-md-3">
-    <div class="prod-card sa" id="pcard-12">
-      <div class="prod-badge">-33%</div>
-      <div class="prod-img-wrap">
-        <img class="prod-img" src="media/Double Layer Coffee Mug-12.jpeg" alt="Double Layer Coffee Mug">
-      </div>
-      <div class="prod-body">
-        <h3 class="prod-name">Double Layer Coffee Mug</h3>
-        <div class="prod-price-row">
-          <span class="prod-orig">৳990</span>
-          <span class="prod-sale">৳690</span>
+          <!-- Product 13 -->
+          <div class="col-6 col-md-3">
+            <div class="prod-card sa" id="pcard-13">
+              <div class="prod-badge">-30%</div>
+              <div class="prod-img-wrap">
+                <img
+                  class="prod-img"
+                  src="media/Pretty Kitty Mug Double Layer Mug-13.webp"
+                  alt="Pretty Kitty Mug Double Layer Mug"
+                />
+              </div>
+              <div class="prod-body">
+                <h3 class="prod-name">Pretty Kitty Mug Double Layer Mug</h3>
+                <div class="prod-price-row">
+                  <span class="prod-orig">৳1050</span>
+                  <span class="prod-sale">৳750</span>
+                </div>
+                <button
+                  class="prod-add-btn"
+                  id="pbtn-13"
+                  onclick="toggleFromCard(13)"
+                >
+                  <span>🛒 কার্টে যোগ করুন</span>
+                </button>
+                <div class="prod-qty-ctrl" id="pqc-13">
+                  <button class="prod-qty-btn" onclick="chgQty(13, -1)">
+                    −
+                  </button>
+                  <span class="prod-qty-val" id="pqv-13">1</span>
+                  <button class="prod-qty-btn" onclick="chgQty(13, 1)">
+                    +
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <button class="prod-add-btn" id="pbtn-12" onclick="toggleFromCard(12)">
-          <span>🛒 কার্টে যোগ করুন</span>
-        </button>
-        <div class="prod-qty-ctrl" id="pqc-12">
-          <button class="prod-qty-btn" onclick="chgQty(12,-1)">−</button>
-          <span class="prod-qty-val" id="pqv-12">1</span>
-          <button class="prod-qty-btn" onclick="chgQty(12,1)">+</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Product 13 -->
-  <div class="col-6 col-md-3">
-    <div class="prod-card sa" id="pcard-13">
-      <div class="prod-badge">-33%</div>
-      <div class="prod-img-wrap">
-        <img class="prod-img" src="media/Pretty Kitty Mug Double Layer Mug-13.webp" alt="Pretty Kitty Mug Double Layer Mug">
-      </div>
-      <div class="prod-body">
-        <h3 class="prod-name">Pretty Kitty Mug Double Layer Mug</h3>
-        <div class="prod-price-row">
-          <span class="prod-orig">৳990</span>
-          <span class="prod-sale">৳750</span>
-        </div>
-        <button class="prod-add-btn" id="pbtn-13" onclick="toggleFromCard(13)">
-          <span>🛒 কার্টে যোগ করুন</span>
-        </button>
-        <div class="prod-qty-ctrl" id="pqc-13">
-          <button class="prod-qty-btn" onclick="chgQty(13,-1)">−</button>
-          <span class="prod-qty-val" id="pqv-13">1</span>
-          <button class="prod-qty-btn" onclick="chgQty(13,1)">+</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
 
         <div class="text-center mt-4 sa">
           <a
@@ -2280,213 +2416,554 @@
         </p>
 
         <div class="co-cart-grid">
-  <!-- Product 1 -->
-  <div class="co-cart-item in-cart" id="ci-1" onclick="cardRowClick(event, 1)">
-    <input type="checkbox" class="co-cart-cb" id="ccb-1" checked onchange="toggleItem(1)">
-    <img class="co-cart-img" src="media/Pastle Flower Double Layer Mug-01.jpeg" alt="Pastel Flower Double Layer Mug" onerror="this.style.opacity=0.4">
-    <div class="co-cart-body">
-      <div class="co-cart-name">Pastel Flower Double Layer Mug</div>
-      <div><span class="co-cart-orig">৳1020</span><span class="co-cart-price">৳710</span></div>
-      <div class="co-cart-qw">
-        <button class="co-cart-qb" onclick="chgItemQty(1,-1)">−</button>
-        <input type="text" class="co-cart-qi" id="ciq-1" value="1" min="1" onchange="renderSummary()">
-        <button class="co-cart-qb" onclick="chgItemQty(1,1)">+</button>
-      </div>
-    </div>
-    <div class="co-cart-right"><span class="co-cart-total" id="cit-1">৳710</span></div>
-  </div>
+          <!-- Product 1 -->
+          <div
+            class="co-cart-item in-cart"
+            id="ci-1"
+            onclick="cardRowClick(event, 1)"
+          >
+            <input
+              type="checkbox"
+              class="co-cart-cb"
+              id="ccb-1"
+              checked
+              onchange="toggleItem(1)"
+            />
+            <img
+              class="co-cart-img"
+              src="media/Pastle Flower Double Layer Mug-01.jpeg"
+              alt="Pastel Flower Double Layer Mug"
+              onerror="this.style.opacity = 0.4"
+            />
+            <div class="co-cart-body">
+              <div class="co-cart-name">Pastel Flower Double Layer Mug</div>
+              <div>
+                <span class="co-cart-orig">৳1020</span
+                ><span class="co-cart-price">৳710</span>
+              </div>
+              <div class="co-cart-qw">
+                <button class="co-cart-qb" onclick="chgItemQty(1, -1)">
+                  −
+                </button>
+                <input
+                  type="text"
+                  class="co-cart-qi"
+                  id="ciq-1"
+                  value="1"
+                  min="1"
+                  onchange="renderSummary()"
+                />
+                <button class="co-cart-qb" onclick="chgItemQty(1, 1)">+</button>
+              </div>
+            </div>
+            <div class="co-cart-right">
+              <span class="co-cart-total" id="cit-1">৳710</span>
+            </div>
+          </div>
 
-  <!-- Product 2 -->
-  <div class="co-cart-item" id="ci-2" onclick="cardRowClick(event,2)">
-    <input type="checkbox" class="co-cart-cb" id="ccb-2" onchange="toggleItem(2)">
-    <img class="co-cart-img" src="media/Yellow Blossom Double Layer Mug-2.jpeg" alt="Yellow Blossom Double Layer Mug" onerror="this.style.opacity=0.4">
-    <div class="co-cart-body">
-      <div class="co-cart-name">Yellow Blossom Double Layer Mug</div>
-      <div><span class="co-cart-orig">৳990</span><span class="co-cart-price">৳710</span></div>
-      <div class="co-cart-qw">
-        <button class="co-cart-qb" onclick="chgItemQty(2,-1)">−</button>
-        <input type="text" class="co-cart-qi" id="ciq-2" value="1" min="1" onchange="renderSummary()">
-        <button class="co-cart-qb" onclick="chgItemQty(2,1)">+</button>
-      </div>
-    </div>
-    <div class="co-cart-right"><span class="co-cart-total" id="cit-2">৳710</span></div>
-  </div>
+          <!-- Product 2 -->
+          <div class="co-cart-item" id="ci-2" onclick="cardRowClick(event, 2)">
+            <input
+              type="checkbox"
+              class="co-cart-cb"
+              id="ccb-2"
+              onchange="toggleItem(2)"
+            />
+            <img
+              class="co-cart-img"
+              src="media/Yellow Blossom Double Layer Mug-2.jpeg"
+              alt="Yellow Blossom Double Layer Mug"
+              onerror="this.style.opacity = 0.4"
+            />
+            <div class="co-cart-body">
+              <div class="co-cart-name">Yellow Blossom Double Layer Mug</div>
+              <div>
+                <span class="co-cart-orig">৳1020</span
+                ><span class="co-cart-price">৳710</span>
+              </div>
+              <div class="co-cart-qw">
+                <button class="co-cart-qb" onclick="chgItemQty(2, -1)">
+                  −
+                </button>
+                <input
+                  type="text"
+                  class="co-cart-qi"
+                  id="ciq-2"
+                  value="1"
+                  min="1"
+                  onchange="renderSummary()"
+                />
+                <button class="co-cart-qb" onclick="chgItemQty(2, 1)">+</button>
+              </div>
+            </div>
+            <div class="co-cart-right">
+              <span class="co-cart-total" id="cit-2">৳710</span>
+            </div>
+          </div>
 
-  <!-- Product 3 -->
-  <div class="co-cart-item" id="ci-3" onclick="cardRowClick(event,3)">
-    <input type="checkbox" class="co-cart-cb" id="ccb-3" onchange="toggleItem(3)">
-    <img class="co-cart-img" src="media/Tropical Aurora Double Layer Mug-3 .jpeg" alt="Tropical Aurora Double Layer Mug" onerror="this.style.opacity=0.4">
-    <div class="co-cart-body">
-      <div class="co-cart-name">Tropical Aurora Double Layer Mug</div>
-      <div><span class="co-cart-orig">৳990</span><span class="co-cart-price">৳710</span></div>
-      <div class="co-cart-qw">
-        <button class="co-cart-qb" onclick="chgItemQty(3,-1)">−</button>
-        <input type="text" class="co-cart-qi" id="ciq-3" value="1" min="1" onchange="renderSummary()">
-        <button class="co-cart-qb" onclick="chgItemQty(3,1)">+</button>
-      </div>
-    </div>
-    <div class="co-cart-right"><span class="co-cart-total" id="cit-3">৳710</span></div>
-  </div>
+          <!-- Product 3 -->
+          <div class="co-cart-item" id="ci-3" onclick="cardRowClick(event, 3)">
+            <input
+              type="checkbox"
+              class="co-cart-cb"
+              id="ccb-3"
+              onchange="toggleItem(3)"
+            />
+            <img
+              class="co-cart-img"
+              src="media/Tropical Aurora Double Layer Mug-3 .jpeg"
+              alt="Tropical Aurora Double Layer Mug"
+              onerror="this.style.opacity = 0.4"
+            />
+            <div class="co-cart-body">
+              <div class="co-cart-name">Tropical Aurora Double Layer Mug</div>
+              <div>
+                <span class="co-cart-orig">৳1020</span
+                ><span class="co-cart-price">৳710</span>
+              </div>
+              <div class="co-cart-qw">
+                <button class="co-cart-qb" onclick="chgItemQty(3, -1)">
+                  −
+                </button>
+                <input
+                  type="text"
+                  class="co-cart-qi"
+                  id="ciq-3"
+                  value="1"
+                  min="1"
+                  onchange="renderSummary()"
+                />
+                <button class="co-cart-qb" onclick="chgItemQty(3, 1)">+</button>
+              </div>
+            </div>
+            <div class="co-cart-right">
+              <span class="co-cart-total" id="cit-3">৳710</span>
+            </div>
+          </div>
 
-  <!-- Product 4 -->
-  <div class="co-cart-item" id="ci-4" onclick="cardRowClick(event,4)">
-    <input type="checkbox" class="co-cart-cb" id="ccb-4" onchange="toggleItem(4)">
-    <img class="co-cart-img" src="media/Candy Splash Double Layer Glass-4.jpeg" alt="Candy Splash Double Layer Glass" onerror="this.style.opacity=0.4">
-    <div class="co-cart-body">
-      <div class="co-cart-name">Candy Splash Double Layer Glass</div>
-      <div><span class="co-cart-orig">৳990</span><span class="co-cart-price">৳690</span></div>
-      <div class="co-cart-qw">
-        <button class="co-cart-qb" onclick="chgItemQty(4,-1)">−</button>
-        <input type="text" class="co-cart-qi" id="ciq-4" value="1" min="1" onchange="renderSummary()">
-        <button class="co-cart-qb" onclick="chgItemQty(4,1)">+</button>
-      </div>
-    </div>
-    <div class="co-cart-right"><span class="co-cart-total" id="cit-4">৳710</span></div>
-  </div>
+          <!-- Product 4 -->
+          <div class="co-cart-item" id="ci-4" onclick="cardRowClick(event, 4)">
+            <input
+              type="checkbox"
+              class="co-cart-cb"
+              id="ccb-4"
+              onchange="toggleItem(4)"
+            />
+            <img
+              class="co-cart-img"
+              src="media/Candy Splash Double Layer Glass-4.jpeg"
+              alt="Candy Splash Double Layer Glass"
+              onerror="this.style.opacity = 0.4"
+            />
+            <div class="co-cart-body">
+              <div class="co-cart-name">Candy Splash Double Layer Glass</div>
+              <div>
+                <span class="co-cart-orig">৳990</span
+                ><span class="co-cart-price">৳690</span>
+              </div>
+              <div class="co-cart-qw">
+                <button class="co-cart-qb" onclick="chgItemQty(4, -1)">
+                  −
+                </button>
+                <input
+                  type="text"
+                  class="co-cart-qi"
+                  id="ciq-4"
+                  value="1"
+                  min="1"
+                  onchange="renderSummary()"
+                />
+                <button class="co-cart-qb" onclick="chgItemQty(4, 1)">+</button>
+              </div>
+            </div>
+            <div class="co-cart-right">
+              <span class="co-cart-total" id="cit-4">৳690</span>
+            </div>
+          </div>
 
-  <!-- Product 5 -->
-  <div class="co-cart-item" id="ci-5" onclick="cardRowClick(event,5)">
-    <input type="checkbox" class="co-cart-cb" id="ccb-5" onchange="toggleItem(5)">
-    <img class="co-cart-img" src="media/Cherry Nature Double layer Glass-5.jpeg" alt="Cherry Nature Double layer Glass" onerror="this.style.opacity=0.4">
-    <div class="co-cart-body">
-      <div class="co-cart-name">Cherry Nature Double layer Glass</div>
-      <div><span class="co-cart-orig">৳990</span><span class="co-cart-price">৳690</span></div>
-      <div class="co-cart-qw">
-        <button class="co-cart-qb" onclick="chgItemQty(5,-1)">−</button>
-        <input type="text" class="co-cart-qi" id="ciq-5" value="1" min="1" onchange="renderSummary()">
-        <button class="co-cart-qb" onclick="chgItemQty(5,1)">+</button>
-      </div>
-    </div>
-    <div class="co-cart-right"><span class="co-cart-total" id="cit-5">৳710</span></div>
-  </div>
+          <!-- Product 5 -->
+          <div class="co-cart-item" id="ci-5" onclick="cardRowClick(event, 5)">
+            <input
+              type="checkbox"
+              class="co-cart-cb"
+              id="ccb-5"
+              onchange="toggleItem(5)"
+            />
+            <img
+              class="co-cart-img"
+              src="media/Cherry Nature Double layer Glass-5.jpeg"
+              alt="Cherry Nature Double layer Glass"
+              onerror="this.style.opacity = 0.4"
+            />
+            <div class="co-cart-body">
+              <div class="co-cart-name">Cherry Nature Double layer Glass</div>
+              <div>
+                <span class="co-cart-orig">৳990</span
+                ><span class="co-cart-price">৳690</span>
+              </div>
+              <div class="co-cart-qw">
+                <button class="co-cart-qb" onclick="chgItemQty(5, -1)">
+                  −
+                </button>
+                <input
+                  type="text"
+                  class="co-cart-qi"
+                  id="ciq-5"
+                  value="1"
+                  min="1"
+                  onchange="renderSummary()"
+                />
+                <button class="co-cart-qb" onclick="chgItemQty(5, 1)">+</button>
+              </div>
+            </div>
+            <div class="co-cart-right">
+              <span class="co-cart-total" id="cit-5">৳690</span>
+            </div>
+          </div>
 
-  <!-- Product 6 -->
-  <div class="co-cart-item" id="ci-6" onclick="cardRowClick(event,6)">
-    <input type="checkbox" class="co-cart-cb" id="ccb-6" onchange="toggleItem(6)">
-    <img class="co-cart-img" src="media/Dream Petal Double Layer Mug-6.jpeg" alt="Dream Petal Double Layer Mug" onerror="this.style.opacity=0.4">
-    <div class="co-cart-body">
-      <div class="co-cart-name">Dream Petal Double Layer Mug</div>
-      <div><span class="co-cart-orig">৳990</span><span class="co-cart-price">৳710</span></div>
-      <div class="co-cart-qw">
-        <button class="co-cart-qb" onclick="chgItemQty(6,-1)">−</button>
-        <input type="text" class="co-cart-qi" id="ciq-6" value="1" min="1" onchange="renderSummary()">
-        <button class="co-cart-qb" onclick="chgItemQty(6,1)">+</button>
-      </div>
-    </div>
-    <div class="co-cart-right"><span class="co-cart-total" id="cit-6">৳710</span></div>
-  </div>
+          <!-- Product 6 -->
+          <div class="co-cart-item" id="ci-6" onclick="cardRowClick(event, 6)">
+            <input
+              type="checkbox"
+              class="co-cart-cb"
+              id="ccb-6"
+              onchange="toggleItem(6)"
+            />
+            <img
+              class="co-cart-img"
+              src="media/Dream Petal Double Layer Mug-6.jpeg"
+              alt="Dream Petal Double Layer Mug"
+              onerror="this.style.opacity = 0.4"
+            />
+            <div class="co-cart-body">
+              <div class="co-cart-name">Dream Petal Double Layer Mug</div>
+              <div>
+                <span class="co-cart-orig">৳1020</span
+                ><span class="co-cart-price">৳710</span>
+              </div>
+              <div class="co-cart-qw">
+                <button class="co-cart-qb" onclick="chgItemQty(6, -1)">
+                  −
+                </button>
+                <input
+                  type="text"
+                  class="co-cart-qi"
+                  id="ciq-6"
+                  value="1"
+                  min="1"
+                  onchange="renderSummary()"
+                />
+                <button class="co-cart-qb" onclick="chgItemQty(6, 1)">+</button>
+              </div>
+            </div>
+            <div class="co-cart-right">
+              <span class="co-cart-total" id="cit-6">৳710</span>
+            </div>
+          </div>
 
-  <!-- Product 7 -->
-  <div class="co-cart-item" id="ci-7" onclick="cardRowClick(event,7)">
-    <input type="checkbox" class="co-cart-cb" id="ccb-7" onchange="toggleItem(7)">
-    <img class="co-cart-img" src="media/Prisom Peace Double Layer Mug-7.jpeg" alt="Prisom Peace Double Layer Mug" onerror="this.style.opacity=0.4">
-    <div class="co-cart-body">
-      <div class="co-cart-name">Prisom Peace Double Layer Mug</div>
-      <div><span class="co-cart-orig">৳990</span><span class="co-cart-price">৳710</span></div>
-      <div class="co-cart-qw">
-        <button class="co-cart-qb" onclick="chgItemQty(7,-1)">−</button>
-        <input type="text" class="co-cart-qi" id="ciq-7" value="1" min="1" onchange="renderSummary()">
-        <button class="co-cart-qb" onclick="chgItemQty(7,1)">+</button>
-      </div>
-    </div>
-    <div class="co-cart-right"><span class="co-cart-total" id="cit-7">৳710</span></div>
-  </div>
+          <!-- Product 7 -->
+          <div class="co-cart-item" id="ci-7" onclick="cardRowClick(event, 7)">
+            <input
+              type="checkbox"
+              class="co-cart-cb"
+              id="ccb-7"
+              onchange="toggleItem(7)"
+            />
+            <img
+              class="co-cart-img"
+              src="media/Prisom Peace Double Layer Mug-7.jpeg"
+              alt="Prisom Peace Double Layer Mug"
+              onerror="this.style.opacity = 0.4"
+            />
+            <div class="co-cart-body">
+              <div class="co-cart-name">Prisom Peace Double Layer Mug</div>
+              <div>
+                <span class="co-cart-orig">৳1020</span
+                ><span class="co-cart-price">৳710</span>
+              </div>
+              <div class="co-cart-qw">
+                <button class="co-cart-qb" onclick="chgItemQty(7, -1)">
+                  −
+                </button>
+                <input
+                  type="text"
+                  class="co-cart-qi"
+                  id="ciq-7"
+                  value="1"
+                  min="1"
+                  onchange="renderSummary()"
+                />
+                <button class="co-cart-qb" onclick="chgItemQty(7, 1)">+</button>
+              </div>
+            </div>
+            <div class="co-cart-right">
+              <span class="co-cart-total" id="cit-7">৳710</span>
+            </div>
+          </div>
 
-  <!-- Product 8 -->
-  <div class="co-cart-item" id="ci-8" onclick="cardRowClick(event,8)">
-    <input type="checkbox" class="co-cart-cb" id="ccb-8" onchange="toggleItem(8)">
-    <img class="co-cart-img" src="media/Pinky Sakura Double Layer Mug-8.jpeg" alt="Pinky Sakura Double Layer Mug" onerror="this.style.opacity=0.4">
-    <div class="co-cart-body">
-      <div class="co-cart-name">Pinky Sakura Double Layer Mug</div>
-      <div><span class="co-cart-orig">৳990</span><span class="co-cart-price">৳690</span></div>
-      <div class="co-cart-qw">
-        <button class="co-cart-qb" onclick="chgItemQty(8,-1)">−</button>
-        <input type="text" class="co-cart-qi" id="ciq-8" value="1" min="1" onchange="renderSummary()">
-        <button class="co-cart-qb" onclick="chgItemQty(8,1)">+</button>
-      </div>
-    </div>
-    <div class="co-cart-right"><span class="co-cart-total" id="cit-8">৳710</span></div>
-  </div>
+          <!-- Product 8 -->
+          <div class="co-cart-item" id="ci-8" onclick="cardRowClick(event, 8)">
+            <input
+              type="checkbox"
+              class="co-cart-cb"
+              id="ccb-8"
+              onchange="toggleItem(8)"
+            />
+            <img
+              class="co-cart-img"
+              src="media/Pinky Sakura Double Layer Mug-8.jpeg"
+              alt="Pinky Sakura Double Layer Mug"
+              onerror="this.style.opacity = 0.4"
+            />
+            <div class="co-cart-body">
+              <div class="co-cart-name">Pinky Sakura Double Layer Mug</div>
+              <div>
+                <span class="co-cart-orig">৳990</span
+                ><span class="co-cart-price">৳690</span>
+              </div>
+              <div class="co-cart-qw">
+                <button class="co-cart-qb" onclick="chgItemQty(8, -1)">
+                  −
+                </button>
+                <input
+                  type="text"
+                  class="co-cart-qi"
+                  id="ciq-8"
+                  value="1"
+                  min="1"
+                  onchange="renderSummary()"
+                />
+                <button class="co-cart-qb" onclick="chgItemQty(8, 1)">+</button>
+              </div>
+            </div>
+            <div class="co-cart-right">
+              <span class="co-cart-total" id="cit-8">৳690</span>
+            </div>
+          </div>
 
-  <!-- Product 9 -->
-  <div class="co-cart-item" id="ci-9" onclick="cardRowClick(event,9)">
-    <input type="checkbox" class="co-cart-cb" id="ccb-9" onchange="toggleItem(9)">
-    <img class="co-cart-img" src="media/Feather Mist Double Layer Mug-9.jpeg" alt="Feather Mist Double Layer Mug" onerror="this.style.opacity=0.4">
-    <div class="co-cart-body">
-      <div class="co-cart-name">Feather Mist Double Layer Mug</div>
-      <div><span class="co-cart-orig">৳990</span><span class="co-cart-price">৳710</span></div>
-      <div class="co-cart-qw">
-        <button class="co-cart-qb" onclick="chgItemQty(9,-1)">−</button>
-        <input type="text" class="co-cart-qi" id="ciq-9" value="1" min="1" onchange="renderSummary()">
-        <button class="co-cart-qb" onclick="chgItemQty(9,1)">+</button>
-      </div>
-    </div>
-    <div class="co-cart-right"><span class="co-cart-total" id="cit-9">৳710</span></div>
-  </div>
+          <!-- Product 9 -->
+          <div class="co-cart-item" id="ci-9" onclick="cardRowClick(event, 9)">
+            <input
+              type="checkbox"
+              class="co-cart-cb"
+              id="ccb-9"
+              onchange="toggleItem(9)"
+            />
+            <img
+              class="co-cart-img"
+              src="media/Feather Mist Double Layer Mug-9.jpeg"
+              alt="Feather Mist Double Layer Mug"
+              onerror="this.style.opacity = 0.4"
+            />
+            <div class="co-cart-body">
+              <div class="co-cart-name">Feather Mist Double Layer Mug</div>
+              <div>
+                <span class="co-cart-orig">৳1020</span
+                ><span class="co-cart-price">৳710</span>
+              </div>
+              <div class="co-cart-qw">
+                <button class="co-cart-qb" onclick="chgItemQty(9, -1)">
+                  −
+                </button>
+                <input
+                  type="text"
+                  class="co-cart-qi"
+                  id="ciq-9"
+                  value="1"
+                  min="1"
+                  onchange="renderSummary()"
+                />
+                <button class="co-cart-qb" onclick="chgItemQty(9, 1)">+</button>
+              </div>
+            </div>
+            <div class="co-cart-right">
+              <span class="co-cart-total" id="cit-9">৳710</span>
+            </div>
+          </div>
 
-  <!-- Product 10 -->
-  <div class="co-cart-item" id="ci-10" onclick="cardRowClick(event,10)">
-    <input type="checkbox" class="co-cart-cb" id="ccb-10" onchange="toggleItem(10)">
-    <img class="co-cart-img" src="media/Mint Blossom Double Layer Mug-10.jpeg" alt="Mint Blossom Double Layer Mug" onerror="this.style.opacity=0.4">
-    <div class="co-cart-body">
-      <div class="co-cart-name">Mint Blossom Double Layer Mug</div>
-      <div><span class="co-cart-orig">৳990</span><span class="co-cart-price">৳710</span></div>
-      <div class="co-cart-qw">
-        <button class="co-cart-qb" onclick="chgItemQty(10,-1)">−</button>
-        <input type="text" class="co-cart-qi" id="ciq-10" value="1" min="1" onchange="renderSummary()">
-        <button class="co-cart-qb" onclick="chgItemQty(10,1)">+</button>
-      </div>
-    </div>
-    <div class="co-cart-right"><span class="co-cart-total" id="cit-10">৳710</span></div>
-  </div>
+          <!-- Product 10 -->
+          <div
+            class="co-cart-item"
+            id="ci-10"
+            onclick="cardRowClick(event, 10)"
+          >
+            <input
+              type="checkbox"
+              class="co-cart-cb"
+              id="ccb-10"
+              onchange="toggleItem(10)"
+            />
+            <img
+              class="co-cart-img"
+              src="media/Mint Blossom Double Layer Mug-10.jpeg"
+              alt="Mint Blossom Double Layer Mug"
+              onerror="this.style.opacity = 0.4"
+            />
+            <div class="co-cart-body">
+              <div class="co-cart-name">Mint Blossom Double Layer Mug</div>
+              <div>
+                <span class="co-cart-orig">৳1020</span
+                ><span class="co-cart-price">৳710</span>
+              </div>
+              <div class="co-cart-qw">
+                <button class="co-cart-qb" onclick="chgItemQty(10, -1)">
+                  −
+                </button>
+                <input
+                  type="text"
+                  class="co-cart-qi"
+                  id="ciq-10"
+                  value="1"
+                  min="1"
+                  onchange="renderSummary()"
+                />
+                <button class="co-cart-qb" onclick="chgItemQty(10, 1)">
+                  +
+                </button>
+              </div>
+            </div>
+            <div class="co-cart-right">
+              <span class="co-cart-total" id="cit-10">৳710</span>
+            </div>
+          </div>
 
-  <!-- Product 11 -->
-  <div class="co-cart-item" id="ci-11" onclick="cardRowClick(event,11)">
-    <input type="checkbox" class="co-cart-cb" id="ccb-11" onchange="toggleItem(11)">
-    <img class="co-cart-img" src="media/Layer Blush Double Layer Mug-11.jpeg" alt="Layer Blush Double Layer Mug" onerror="this.style.opacity=0.4">
-    <div class="co-cart-body">
-      <div class="co-cart-name">Layer Blush Double Layer Mug</div>
-      <div><span class="co-cart-orig">৳990</span><span class="co-cart-price">৳710</span></div>
-      <div class="co-cart-qw">
-        <button class="co-cart-qb" onclick="chgItemQty(11,-1)">−</button>
-        <input type="text" class="co-cart-qi" id="ciq-11" value="1" min="1" onchange="renderSummary()">
-        <button class="co-cart-qb" onclick="chgItemQty(11,1)">+</button>
-      </div>
-    </div>
-    <div class="co-cart-right"><span class="co-cart-total" id="cit-11">৳710</span></div>
-  </div>
+          <!-- Product 11 -->
+          <div
+            class="co-cart-item"
+            id="ci-11"
+            onclick="cardRowClick(event, 11)"
+          >
+            <input
+              type="checkbox"
+              class="co-cart-cb"
+              id="ccb-11"
+              onchange="toggleItem(11)"
+            />
+            <img
+              class="co-cart-img"
+              src="media/Layer Blush Double Layer Mug-11.jpeg"
+              alt="Layer Blush Double Layer Mug"
+              onerror="this.style.opacity = 0.4"
+            />
+            <div class="co-cart-body">
+              <div class="co-cart-name">Layer Blush Double Layer Mug</div>
+              <div>
+                <span class="co-cart-orig">৳1020</span
+                ><span class="co-cart-price">৳710</span>
+              </div>
+              <div class="co-cart-qw">
+                <button class="co-cart-qb" onclick="chgItemQty(11, -1)">
+                  −
+                </button>
+                <input
+                  type="text"
+                  class="co-cart-qi"
+                  id="ciq-11"
+                  value="1"
+                  min="1"
+                  onchange="renderSummary()"
+                />
+                <button class="co-cart-qb" onclick="chgItemQty(11, 1)">
+                  +
+                </button>
+              </div>
+            </div>
+            <div class="co-cart-right">
+              <span class="co-cart-total" id="cit-11">৳710</span>
+            </div>
+          </div>
 
-  <!-- Product 12 -->
-  <div class="co-cart-item" id="ci-12" onclick="cardRowClick(event,12)">
-    <input type="checkbox" class="co-cart-cb" id="ccb-12" onchange="toggleItem(12)">
-    <img class="co-cart-img" src="media/Double Layer Coffee Mug-12.jpeg" alt="Double Layer Coffee Mug" onerror="this.style.opacity=0.4">
-    <div class="co-cart-body">
-      <div class="co-cart-name">Double Layer Coffee Mug</div>
-      <div><span class="co-cart-orig">৳990</span><span class="co-cart-price">৳690</span></div>
-      <div class="co-cart-qw">
-        <button class="co-cart-qb" onclick="chgItemQty(12,-1)">−</button>
-        <input type="text" class="co-cart-qi" id="ciq-12" value="1" min="1" onchange="renderSummary()">
-        <button class="co-cart-qb" onclick="chgItemQty(12,1)">+</button>
-      </div>
-    </div>
-    <div class="co-cart-right"><span class="co-cart-total" id="cit-12">৳710</span></div>
-  </div>
-  <!-- Product 13 -->
-  <div class="co-cart-item" id="ci-13" onclick="cardRowClick(event,13)">
-    <input type="checkbox" class="co-cart-cb" id="ccb-13" onchange="toggleItem(13)">
-    <img class="co-cart-img" src="media/Pretty Kitty Mug Double Layer Mug-13.webp" alt="Pretty Kitty Mug Double Layer Mug" onerror="this.style.opacity=0.4">
-    <div class="co-cart-body">
-      <div class="co-cart-name">Pretty Kitty Mug Double Layer Mug</div>
-      <div><span class="co-cart-orig">৳990</span><span class="co-cart-price">৳750</span></div>
-      <div class="co-cart-qw">
-        <button class="co-cart-qb" onclick="chgItemQty(13,-1)">−</button>
-        <input type="text" class="co-cart-qi" id="ciq-13" value="1" min="1" onchange="renderSummary()">
-        <button class="co-cart-qb" onclick="chgItemQty(13,1)">+</button>
-      </div>
-    </div>
-    <div class="co-cart-right"><span class="co-cart-total" id="cit-13">৳710</span></div>
-  </div>
-</div>
+          <!-- Product 12 -->
+          <div
+            class="co-cart-item"
+            id="ci-12"
+            onclick="cardRowClick(event, 12)"
+          >
+            <input
+              type="checkbox"
+              class="co-cart-cb"
+              id="ccb-12"
+              onchange="toggleItem(12)"
+            />
+            <img
+              class="co-cart-img"
+              src="media/Double Layer Coffee Mug-12.png"
+              alt="Double Layer Coffee Mug"
+              onerror="this.style.opacity = 0.4"
+            />
+            <div class="co-cart-body">
+              <div class="co-cart-name">Double Layer Coffee Mug</div>
+              <div>
+                <span class="co-cart-orig">৳990</span
+                ><span class="co-cart-price">৳690</span>
+              </div>
+              <div class="co-cart-qw">
+                <button class="co-cart-qb" onclick="chgItemQty(12, -1)">
+                  −
+                </button>
+                <input
+                  type="text"
+                  class="co-cart-qi"
+                  id="ciq-12"
+                  value="1"
+                  min="1"
+                  onchange="renderSummary()"
+                />
+                <button class="co-cart-qb" onclick="chgItemQty(12, 1)">
+                  +
+                </button>
+              </div>
+            </div>
+            <div class="co-cart-right">
+              <span class="co-cart-total" id="cit-12">৳690</span>
+            </div>
+          </div>
+          <!-- Product 13 -->
+          <div
+            class="co-cart-item"
+            id="ci-13"
+            onclick="cardRowClick(event, 13)"
+          >
+            <input
+              type="checkbox"
+              class="co-cart-cb"
+              id="ccb-13"
+              onchange="toggleItem(13)"
+            />
+            <img
+              class="co-cart-img"
+              src="media/Pretty Kitty Mug Double Layer Mug-13.webp"
+              alt="Pretty Kitty Mug Double Layer Mug"
+              onerror="this.style.opacity = 0.4"
+            />
+            <div class="co-cart-body">
+              <div class="co-cart-name">Pretty Kitty Mug Double Layer Mug</div>
+              <div>
+                <span class="co-cart-orig">৳1050</span
+                ><span class="co-cart-price">৳750</span>
+              </div>
+              <div class="co-cart-qw">
+                <button class="co-cart-qb" onclick="chgItemQty(13, -1)">
+                  −
+                </button>
+                <input
+                  type="text"
+                  class="co-cart-qi"
+                  id="ciq-13"
+                  value="1"
+                  min="1"
+                  onchange="renderSummary()"
+                />
+                <button class="co-cart-qb" onclick="chgItemQty(13, 1)">
+                  +
+                </button>
+              </div>
+            </div>
+            <div class="co-cart-right">
+              <span class="co-cart-total" id="cit-13">৳750</span>
+            </div>
+          </div>
+        </div>
 
         <div class="co-cols d-flex flex-column flex-md-row gap-4">
           <div class="co-left flex-grow-1">
@@ -2704,7 +3181,7 @@
         12: {
           name: "Double Layer Coffee Mug",
           price: 690,
-          img: "media/Double Layer Coffee Mug-12.jpeg",
+          img: "media/Double Layer Coffee Mug-12.png",
         },
         13: {
           name: "Pretty Kitty Mug Double Layer Mug",
