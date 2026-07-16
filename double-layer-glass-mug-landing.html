@@ -1,10 +1,11 @@
+
 <!doctype html>
 <html lang="bn">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <title>Double Layer Glass Mug – Prodhan.com</title>
+    <title>নান্দনিক ডিজাইনের ডাবল লেয়ার মগ 200ML - 350ML – Prodhan.com</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap"
@@ -602,6 +603,10 @@
         font-size: 11px;
         font-weight: 800;
         box-shadow: 0 3px 8px rgba(37, 99, 235, 0.4);
+        display: none;
+      }
+      .prod-hot.show {
+        display: block;
       }
       .prod-img-wrap {
         width: 100%;
@@ -641,6 +646,19 @@
         .prod-name {
           font-size: 16px;
         }
+      }
+      .prod-size {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        background: var(--blue-50);
+        color: var(--blue-700);
+        font-size: 11px;
+        font-weight: 700;
+        padding: 3px 10px;
+        border-radius: 20px;
+        margin: 0 auto 8px;
+        width: fit-content;
       }
       .prod-price-row {
         display: flex;
@@ -751,6 +769,20 @@
       .features-section {
         padding: 44px 16px;
         background: #fef9f5;
+      }
+      /* ══ USE-CASE SECTION — distinct bg so it doesn't blend into features-section above ══ */
+      .usecase-section {
+        padding: 44px 16px;
+        background: var(--blue-50);
+      }
+      .usecase-section .feat-card {
+        background: #fff;
+      }
+      .usecase-section .feat-icon-wrap.blue {
+        background: #fff;
+      }
+      .usecase-section .feat-icon-wrap.red {
+        background: #fff;
       }
       .feat-card {
         background: #fff;
@@ -1095,6 +1127,18 @@
         margin-bottom: 4px;
         line-height: 1.2;
       }
+      .co-cart-size {
+        display: inline-flex;
+        align-items: center;
+        gap: 3px;
+        background: var(--blue-50);
+        color: var(--blue-700);
+        font-size: 10px;
+        font-weight: 700;
+        padding: 2px 8px;
+        border-radius: 20px;
+        margin-bottom: 4px;
+      }
       .co-cart-price {
         font-size: 15px;
         font-weight: 700;
@@ -1157,7 +1201,13 @@
       .co-cart-total {
         font-size: 15px;
         font-weight: 800;
-        color: #1e293b;
+        color: var(--red-500);
+        white-space: nowrap;
+      }
+      .co-cart-total-label {
+        font-size: 10px;
+        font-weight: 600;
+        color: #94a3b8;
         white-space: nowrap;
       }
 
@@ -1836,14 +1886,13 @@
           <div class="col-12 col-lg-9 text-center">
             <div class="hero-tag sa">🎉 প্রিমিয়াম কোয়ালিটির মগ</div>
             <h1 class="hero-h1 sa">
-              আপনার প্রতিদিনের চা-কফির জন্য<br />
-              <span class="grad-text">ডাবল লেয়ার গ্লাস মগ!</span>
+              নান্দনিক ডিজাইনের<br />
+              <span class="grad-text">ডাবল লেয়ার মগ 200 ML - 350 ML</span>
             </h1>
             <p class="hero-sub sa">
-              হিট-রেজিস্ট্যান্ট বোরোসিলিকেট গ্লাসে তৈরি, ডাবল ওয়াল ইনসুলেশন
-              থাকায় হাত পোড়ে না<br class="d-none d-sm-block" />
-              — এলিগ্যান্ট ডিজাইনের এই মগ নিজে ব্যবহার করুন বা প্রিয়জনকে উপহার
-              দিন!
+              সরাসরি Imported High Borosilicate Glass দিয়ে তৈরী, অধিক টেকসই,
+              তাপ সহনশীল<br class="d-none d-sm-block" />
+              এবং দৃষ্টিনন্দ ডিজাইন।
             </p>
 
             <div class="hero-timer sa">
@@ -1919,8 +1968,7 @@
           <!-- Product 1 -->
           <div class="col-6 col-md-4 col-lg-3">
             <div class="prod-card sa selected" id="pcard-1">
-              <div class="prod-badge">-30%</div>
-              <div class="prod-hot">🔥 সিলেক্টেড</div>
+              <div class="prod-hot show" id="phot-1">🔥 সিলেক্টেড</div>
               <div class="prod-img-wrap">
                 <img
                   class="prod-img"
@@ -1930,8 +1978,8 @@
               </div>
               <div class="prod-body">
                 <h3 class="prod-name">Pastel Flower Double Layer Mug</h3>
+                <div class="prod-size">📏 250 ML</div>
                 <div class="prod-price-row">
-                  <span class="prod-orig">৳1020</span>
                   <span class="prod-sale">৳710</span>
                 </div>
                 <button
@@ -1955,7 +2003,7 @@
           <!-- Product 2 -->
           <div class="col-6 col-md-4 col-lg-3">
             <div class="prod-card sa" id="pcard-2">
-              <div class="prod-badge">-30%</div>
+              <div class="prod-hot" id="phot-2">🔥 সিলেক্টেড</div>
               <div class="prod-img-wrap">
                 <img
                   class="prod-img"
@@ -1965,8 +2013,8 @@
               </div>
               <div class="prod-body">
                 <h3 class="prod-name">Yellow Blossom Double Layer Mug</h3>
+                <div class="prod-size">📏 250 ML</div>
                 <div class="prod-price-row">
-                  <span class="prod-orig">৳1020</span>
                   <span class="prod-sale">৳710</span>
                 </div>
                 <button
@@ -1990,7 +2038,7 @@
           <!-- Product 3 -->
           <div class="col-6 col-md-4 col-lg-3">
             <div class="prod-card sa" id="pcard-3">
-              <div class="prod-badge">-30%</div>
+              <div class="prod-hot" id="phot-3">🔥 সিলেক্টেড</div>
               <div class="prod-img-wrap">
                 <img
                   class="prod-img"
@@ -2000,8 +2048,8 @@
               </div>
               <div class="prod-body">
                 <h3 class="prod-name">Tropical Aurora Double Layer Mug</h3>
+                <div class="prod-size">📏 250 ML</div>
                 <div class="prod-price-row">
-                  <span class="prod-orig">৳1020</span>
                   <span class="prod-sale">৳710</span>
                 </div>
                 <button
@@ -2025,7 +2073,7 @@
           <!-- Product 4 -->
           <div class="col-6 col-md-4 col-lg-3">
             <div class="prod-card sa" id="pcard-4">
-              <div class="prod-badge">-30%</div>
+              <div class="prod-hot" id="phot-4">🔥 সিলেক্টেড</div>
               <div class="prod-img-wrap">
                 <img
                   class="prod-img"
@@ -2035,8 +2083,8 @@
               </div>
               <div class="prod-body">
                 <h3 class="prod-name">Candy Splash Double Layer Glass</h3>
+                <div class="prod-size">📏 250 ML</div>
                 <div class="prod-price-row">
-                  <span class="prod-orig">৳990</span>
                   <span class="prod-sale">৳690</span>
                 </div>
                 <button
@@ -2060,7 +2108,7 @@
           <!-- Product 5 -->
           <div class="col-6 col-md-4 col-lg-3">
             <div class="prod-card sa" id="pcard-5">
-              <div class="prod-badge">-30%</div>
+              <div class="prod-hot" id="phot-5">🔥 সিলেক্টেড</div>
               <div class="prod-img-wrap">
                 <img
                   class="prod-img"
@@ -2070,8 +2118,8 @@
               </div>
               <div class="prod-body">
                 <h3 class="prod-name">Cherry Nature Double layer Glass</h3>
+                <div class="prod-size">📏 250 ML</div>
                 <div class="prod-price-row">
-                  <span class="prod-orig">৳990</span>
                   <span class="prod-sale">৳690</span>
                 </div>
                 <button
@@ -2095,7 +2143,7 @@
           <!-- Product 6 -->
           <div class="col-6 col-md-4 col-lg-3">
             <div class="prod-card sa" id="pcard-6">
-              <div class="prod-badge">-30%</div>
+              <div class="prod-hot" id="phot-6">🔥 সিলেক্টেড</div>
               <div class="prod-img-wrap">
                 <img
                   class="prod-img"
@@ -2105,8 +2153,8 @@
               </div>
               <div class="prod-body">
                 <h3 class="prod-name">Dream Petal Double Layer Mug</h3>
+                <div class="prod-size">📏 250 ML</div>
                 <div class="prod-price-row">
-                  <span class="prod-orig">৳1020</span>
                   <span class="prod-sale">৳710</span>
                 </div>
                 <button
@@ -2130,7 +2178,7 @@
           <!-- Product 7 -->
           <div class="col-6 col-md-4 col-lg-3">
             <div class="prod-card sa" id="pcard-7">
-              <div class="prod-badge">-30%</div>
+              <div class="prod-hot" id="phot-7">🔥 সিলেক্টেড</div>
               <div class="prod-img-wrap">
                 <img
                   class="prod-img"
@@ -2140,8 +2188,8 @@
               </div>
               <div class="prod-body">
                 <h3 class="prod-name">Prisom Peace Double Layer Mug</h3>
+                <div class="prod-size">📏 250 ML</div>
                 <div class="prod-price-row">
-                  <span class="prod-orig">৳1020</span>
                   <span class="prod-sale">৳710</span>
                 </div>
                 <button
@@ -2165,7 +2213,7 @@
           <!-- Product 8 -->
           <div class="col-6 col-md-4 col-lg-3">
             <div class="prod-card sa" id="pcard-8">
-              <div class="prod-badge">-30%</div>
+              <div class="prod-hot" id="phot-8">🔥 সিলেক্টেড</div>
               <div class="prod-img-wrap">
                 <img
                   class="prod-img"
@@ -2175,8 +2223,8 @@
               </div>
               <div class="prod-body">
                 <h3 class="prod-name">Pinky Sakura Double Layer Mug</h3>
+                <div class="prod-size">📏 250 ML</div>
                 <div class="prod-price-row">
-                  <span class="prod-orig">৳990</span>
                   <span class="prod-sale">৳690</span>
                 </div>
                 <button
@@ -2200,7 +2248,7 @@
           <!-- Product 9 -->
           <div class="col-6 col-md-4 col-lg-3">
             <div class="prod-card sa" id="pcard-9">
-              <div class="prod-badge">-30%</div>
+              <div class="prod-hot" id="phot-9">🔥 সিলেক্টেড</div>
               <div class="prod-img-wrap">
                 <img
                   class="prod-img"
@@ -2210,8 +2258,8 @@
               </div>
               <div class="prod-body">
                 <h3 class="prod-name">Feather Mist Double Layer Mug</h3>
+                <div class="prod-size">📏 250 ML</div>
                 <div class="prod-price-row">
-                  <span class="prod-orig">৳1020</span>
                   <span class="prod-sale">৳710</span>
                 </div>
                 <button
@@ -2235,7 +2283,7 @@
           <!-- Product 10 -->
           <div class="col-6 col-md-4 col-lg-3">
             <div class="prod-card sa" id="pcard-10">
-              <div class="prod-badge">-30%</div>
+              <div class="prod-hot" id="phot-10">🔥 সিলেক্টেড</div>
               <div class="prod-img-wrap">
                 <img
                   class="prod-img"
@@ -2245,8 +2293,8 @@
               </div>
               <div class="prod-body">
                 <h3 class="prod-name">Mint Blossom Double Layer Mug</h3>
+                <div class="prod-size">📏 250 ML</div>
                 <div class="prod-price-row">
-                  <span class="prod-orig">৳1020</span>
                   <span class="prod-sale">৳710</span>
                 </div>
                 <button
@@ -2272,7 +2320,7 @@
           <!-- Product 11 -->
           <div class="col-6 col-md-4 col-lg-3">
             <div class="prod-card sa" id="pcard-11">
-              <div class="prod-badge">-30%</div>
+              <div class="prod-hot" id="phot-11">🔥 সিলেক্টেড</div>
               <div class="prod-img-wrap">
                 <img
                   class="prod-img"
@@ -2282,8 +2330,8 @@
               </div>
               <div class="prod-body">
                 <h3 class="prod-name">Layer Blush Double Layer Mug</h3>
+                <div class="prod-size">📏 250 ML</div>
                 <div class="prod-price-row">
-                  <span class="prod-orig">৳1020</span>
                   <span class="prod-sale">৳710</span>
                 </div>
                 <button
@@ -2309,7 +2357,7 @@
           <!-- Product 12 -->
           <div class="col-6 col-md-4 col-lg-3">
             <div class="prod-card sa" id="pcard-12">
-              <div class="prod-badge">-30%</div>
+              <div class="prod-hot" id="phot-12">🔥 সিলেক্টেড</div>
               <div class="prod-img-wrap">
                 <img
                   class="prod-img"
@@ -2319,8 +2367,8 @@
               </div>
               <div class="prod-body">
                 <h3 class="prod-name">Double Layer Coffee Mug</h3>
+                <div class="prod-size">📏 250 ML</div>
                 <div class="prod-price-row">
-                  <span class="prod-orig">৳990</span>
                   <span class="prod-sale">৳690</span>
                 </div>
                 <button
@@ -2346,7 +2394,7 @@
           <!-- Product 13 -->
           <div class="col-6 col-md-4 col-lg-3">
             <div class="prod-card sa" id="pcard-13">
-              <div class="prod-badge">-30%</div>
+              <div class="prod-hot" id="phot-13">🔥 সিলেক্টেড</div>
               <div class="prod-img-wrap">
                 <img
                   class="prod-img"
@@ -2356,8 +2404,8 @@
               </div>
               <div class="prod-body">
                 <h3 class="prod-name">Pretty Kitty Mug Double Layer Mug</h3>
+                <div class="prod-size">📏 250 ML</div>
                 <div class="prod-price-row">
-                  <span class="prod-orig">৳1050</span>
                   <span class="prod-sale">৳750</span>
                 </div>
                 <button
@@ -2400,50 +2448,66 @@
           <h2 class="sec-h2">প্রতিটি মগে <span>বিশেষ বৈশিষ্ট্য</span></h2>
         </div>
         <div class="row g-3 g-md-4 justify-content-center mb-4">
-          <div class="col-6 col-md-4 col-lg-2">
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="feat-card sa">
+              <div class="feat-icon-wrap blue">🧪</div>
+              <div class="feat-title">High Borosilicate Glass</div>
+              <div class="feat-sub">উন্নতমানের হাই বোরোসিলিকেট গ্লাসে তৈরী</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="feat-card sa">
+              <div class="feat-icon-wrap red">☕</div>
+              <div class="feat-title">গরম ও ঠান্ডা উভয়ের জন্য</div>
+              <div class="feat-sub">
+                গরম ও ঠান্ডা উভয় ধরনের পানীয়ের জন্য উপযোগী
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
             <div class="feat-card sa">
               <div class="feat-icon-wrap blue">🌡️</div>
-              <div class="feat-title">ডাবল ওয়াল ইনসুলেশন</div>
+              <div class="feat-title">ডাবল-ওয়াল ডিজাইন</div>
               <div class="feat-sub">
-                হাত পোড়ে না, ভেতরের পানীয় গরম থাকে দীর্ঘক্ষণ
+                ডাবল-ওয়াল ডিজাইনের কারণে বাইরের অংশ তুলনামূলক কম গরম থাকে
               </div>
             </div>
           </div>
-          <div class="col-6 col-md-4 col-lg-2">
+          <div class="col-6 col-md-4 col-lg-3">
             <div class="feat-card sa">
-              <div class="feat-icon-wrap red">🔥</div>
-              <div class="feat-title">হিট-রেজিস্ট্যান্ট গ্লাস</div>
-              <div class="feat-sub">বোরোসিলিকেট গ্লাসে তৈরি, ফাটে না সহজে</div>
-            </div>
-          </div>
-          <div class="col-6 col-md-4 col-lg-2">
-            <div class="feat-card sa">
-              <div class="feat-icon-wrap blue">🍽️</div>
-              <div class="feat-title">ডিশওয়াশার সেফ</div>
+              <div class="feat-icon-wrap red">⏳</div>
+              <div class="feat-title">দীর্ঘ সময় তাপমাত্রা ধরে রাখে</div>
               <div class="feat-sub">
-                সহজে ধোয়া যায়, মাইক্রোওয়েভেও ব্যবহারযোগ্য
+                পানীয় দীর্ঘ সময় গরম বা ঠান্ডা রাখতে সহায়তা করে
               </div>
             </div>
           </div>
-          <div class="col-6 col-md-4 col-lg-2">
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="feat-card sa">
+              <div class="feat-icon-wrap blue">✨</div>
+              <div class="feat-title">হালকা ও স্বচ্ছ ডিজাইন</div>
+              <div class="feat-sub">হালকা, স্বচ্ছ ও দৃষ্টিনন্দন ডিজাইন</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
             <div class="feat-card sa">
               <div class="feat-icon-wrap red">🛡️</div>
-              <div class="feat-title">BPA-Free ও নিরাপদ</div>
-              <div class="feat-sub">খাদ্য-নিরাপদ উপকরণে তৈরি</div>
+              <div class="feat-title">তাপ সহনশীল</div>
+              <div class="feat-sub">তাপমাত্রা পরিবর্তনে ফেটে যায় না</div>
             </div>
           </div>
-          <div class="col-6 col-md-4 col-lg-2">
+          <div class="col-6 col-md-4 col-lg-3">
             <div class="feat-card sa">
-              <div class="feat-icon-wrap blue">🎁</div>
-              <div class="feat-title">গিফট বক্স</div>
-              <div class="feat-sub">সুন্দর উপহার বাক্সে প্যাকেজিং করা</div>
+              <div class="feat-icon-wrap blue">🤲</div>
+              <div class="feat-title">স্মুথ হ্যান্ডেল গ্রিপ</div>
+              <div class="feat-sub">আরামদায়ক ও স্মুথ হ্যান্ডেল গ্রিপ</div>
             </div>
           </div>
-          <div class="col-6 col-md-4 col-lg-2">
+          <div class="col-6 col-md-4 col-lg-3">
             <div class="feat-card sa">
-              <div class="feat-icon-wrap red">✨</div>
-              <div class="feat-title">এলিগ্যান্ট ডিজাইন</div>
-              <div class="feat-sub">ঘর ও অফিস — দুই জায়গার জন্যই মানানসই</div>
+              <div class="feat-icon-wrap red">🍃</div>
+              <div class="feat-title">ন্যাচারাল লুক</div>
+              <div class="feat-sub">রিফ্রেশিং ও ন্যাচারাল লুক</div>
             </div>
           </div>
         </div>
@@ -2468,6 +2532,66 @@
               হোয়াটসঅ্যাপ</a
             >
             <a href="tel:09643330000" class="btn-call-outline">📞 কল করুন</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ USE CASES ══ -->
+    <section class="usecase-section">
+      <div class="container">
+        <div class="sec-title-wrap sa">
+          <div class="sec-label">💡 ব্যবহারের ক্ষেত্র</div>
+          <h2 class="sec-h2">যে সকল ক্ষেত্রে <span>ব্যবহার করতে পারেন</span></h2>
+        </div>
+        <div class="row g-3 g-md-4 justify-content-center mb-4">
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="feat-card sa">
+              <div class="feat-icon-wrap blue">🏠</div>
+              <div class="feat-title">শো-পিছ</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="feat-card sa">
+              <div class="feat-icon-wrap red">🎂</div>
+              <div class="feat-title">জন্মদিন গিফট</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="feat-card sa">
+              <div class="feat-icon-wrap blue">💍</div>
+              <div class="feat-title">Anniversary গিফট</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="feat-card sa">
+              <div class="feat-icon-wrap red">☕</div>
+              <div class="feat-title">চা, কফি খাওয়ার জন্য</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="feat-card sa">
+              <div class="feat-icon-wrap blue">🥤</div>
+              <div class="feat-title">কোল্ড, হট ড্রিংকস</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="feat-card sa">
+              <div class="feat-icon-wrap red">🙏</div>
+              <div class="feat-title">অতিথি আপ্যায়ন</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="feat-card sa">
+              <div class="feat-icon-wrap blue">💼</div>
+              <div class="feat-title">অফিস ডেস্ক মগ</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="feat-card sa">
+              <div class="feat-icon-wrap red">🔁</div>
+              <div class="feat-title">রেগুলার ইউজ</div>
+            </div>
           </div>
         </div>
       </div>
@@ -2537,10 +2661,7 @@
             />
             <div class="co-cart-body">
               <div class="co-cart-name">Pastel Flower Double Layer Mug</div>
-              <div>
-                <span class="co-cart-orig">৳1020</span
-                ><span class="co-cart-price">৳710</span>
-              </div>
+              <div class="co-cart-size">📏 250 ML</div>
               <div class="co-cart-qw">
                 <button class="co-cart-qb" onclick="chgItemQty(1, -1)">
                   −
@@ -2557,6 +2678,7 @@
               </div>
             </div>
             <div class="co-cart-right">
+              <span class="co-cart-total-label">Price</span>
               <span class="co-cart-total" id="cit-1">৳710</span>
             </div>
           </div>
@@ -2577,10 +2699,7 @@
             />
             <div class="co-cart-body">
               <div class="co-cart-name">Yellow Blossom Double Layer Mug</div>
-              <div>
-                <span class="co-cart-orig">৳1020</span
-                ><span class="co-cart-price">৳710</span>
-              </div>
+              <div class="co-cart-size">📏 250 ML</div>
               <div class="co-cart-qw">
                 <button class="co-cart-qb" onclick="chgItemQty(2, -1)">
                   −
@@ -2597,6 +2716,7 @@
               </div>
             </div>
             <div class="co-cart-right">
+              <span class="co-cart-total-label">Price</span>
               <span class="co-cart-total" id="cit-2">৳710</span>
             </div>
           </div>
@@ -2617,10 +2737,7 @@
             />
             <div class="co-cart-body">
               <div class="co-cart-name">Tropical Aurora Double Layer Mug</div>
-              <div>
-                <span class="co-cart-orig">৳1020</span
-                ><span class="co-cart-price">৳710</span>
-              </div>
+              <div class="co-cart-size">📏 250 ML</div>
               <div class="co-cart-qw">
                 <button class="co-cart-qb" onclick="chgItemQty(3, -1)">
                   −
@@ -2637,6 +2754,7 @@
               </div>
             </div>
             <div class="co-cart-right">
+              <span class="co-cart-total-label">Price</span>
               <span class="co-cart-total" id="cit-3">৳710</span>
             </div>
           </div>
@@ -2657,10 +2775,7 @@
             />
             <div class="co-cart-body">
               <div class="co-cart-name">Candy Splash Double Layer Glass</div>
-              <div>
-                <span class="co-cart-orig">৳990</span
-                ><span class="co-cart-price">৳690</span>
-              </div>
+              <div class="co-cart-size">📏 250 ML</div>
               <div class="co-cart-qw">
                 <button class="co-cart-qb" onclick="chgItemQty(4, -1)">
                   −
@@ -2677,6 +2792,7 @@
               </div>
             </div>
             <div class="co-cart-right">
+              <span class="co-cart-total-label">Price</span>
               <span class="co-cart-total" id="cit-4">৳690</span>
             </div>
           </div>
@@ -2697,10 +2813,7 @@
             />
             <div class="co-cart-body">
               <div class="co-cart-name">Cherry Nature Double layer Glass</div>
-              <div>
-                <span class="co-cart-orig">৳990</span
-                ><span class="co-cart-price">৳690</span>
-              </div>
+              <div class="co-cart-size">📏 250 ML</div>
               <div class="co-cart-qw">
                 <button class="co-cart-qb" onclick="chgItemQty(5, -1)">
                   −
@@ -2717,6 +2830,7 @@
               </div>
             </div>
             <div class="co-cart-right">
+              <span class="co-cart-total-label">Price</span>
               <span class="co-cart-total" id="cit-5">৳690</span>
             </div>
           </div>
@@ -2737,10 +2851,7 @@
             />
             <div class="co-cart-body">
               <div class="co-cart-name">Dream Petal Double Layer Mug</div>
-              <div>
-                <span class="co-cart-orig">৳1020</span
-                ><span class="co-cart-price">৳710</span>
-              </div>
+              <div class="co-cart-size">📏 250 ML</div>
               <div class="co-cart-qw">
                 <button class="co-cart-qb" onclick="chgItemQty(6, -1)">
                   −
@@ -2757,6 +2868,7 @@
               </div>
             </div>
             <div class="co-cart-right">
+              <span class="co-cart-total-label">Price</span>
               <span class="co-cart-total" id="cit-6">৳710</span>
             </div>
           </div>
@@ -2777,10 +2889,7 @@
             />
             <div class="co-cart-body">
               <div class="co-cart-name">Prisom Peace Double Layer Mug</div>
-              <div>
-                <span class="co-cart-orig">৳1020</span
-                ><span class="co-cart-price">৳710</span>
-              </div>
+              <div class="co-cart-size">📏 250 ML</div>
               <div class="co-cart-qw">
                 <button class="co-cart-qb" onclick="chgItemQty(7, -1)">
                   −
@@ -2797,6 +2906,7 @@
               </div>
             </div>
             <div class="co-cart-right">
+              <span class="co-cart-total-label">Price</span>
               <span class="co-cart-total" id="cit-7">৳710</span>
             </div>
           </div>
@@ -2817,10 +2927,7 @@
             />
             <div class="co-cart-body">
               <div class="co-cart-name">Pinky Sakura Double Layer Mug</div>
-              <div>
-                <span class="co-cart-orig">৳990</span
-                ><span class="co-cart-price">৳690</span>
-              </div>
+              <div class="co-cart-size">📏 250 ML</div>
               <div class="co-cart-qw">
                 <button class="co-cart-qb" onclick="chgItemQty(8, -1)">
                   −
@@ -2837,6 +2944,7 @@
               </div>
             </div>
             <div class="co-cart-right">
+              <span class="co-cart-total-label">Price</span>
               <span class="co-cart-total" id="cit-8">৳690</span>
             </div>
           </div>
@@ -2857,10 +2965,7 @@
             />
             <div class="co-cart-body">
               <div class="co-cart-name">Feather Mist Double Layer Mug</div>
-              <div>
-                <span class="co-cart-orig">৳1020</span
-                ><span class="co-cart-price">৳710</span>
-              </div>
+              <div class="co-cart-size">📏 250 ML</div>
               <div class="co-cart-qw">
                 <button class="co-cart-qb" onclick="chgItemQty(9, -1)">
                   −
@@ -2877,6 +2982,7 @@
               </div>
             </div>
             <div class="co-cart-right">
+              <span class="co-cart-total-label">Price</span>
               <span class="co-cart-total" id="cit-9">৳710</span>
             </div>
           </div>
@@ -2901,10 +3007,7 @@
             />
             <div class="co-cart-body">
               <div class="co-cart-name">Mint Blossom Double Layer Mug</div>
-              <div>
-                <span class="co-cart-orig">৳1020</span
-                ><span class="co-cart-price">৳710</span>
-              </div>
+              <div class="co-cart-size">📏 250 ML</div>
               <div class="co-cart-qw">
                 <button class="co-cart-qb" onclick="chgItemQty(10, -1)">
                   −
@@ -2923,6 +3026,7 @@
               </div>
             </div>
             <div class="co-cart-right">
+              <span class="co-cart-total-label">Price</span>
               <span class="co-cart-total" id="cit-10">৳710</span>
             </div>
           </div>
@@ -2947,10 +3051,7 @@
             />
             <div class="co-cart-body">
               <div class="co-cart-name">Layer Blush Double Layer Mug</div>
-              <div>
-                <span class="co-cart-orig">৳1020</span
-                ><span class="co-cart-price">৳710</span>
-              </div>
+              <div class="co-cart-size">📏 250 ML</div>
               <div class="co-cart-qw">
                 <button class="co-cart-qb" onclick="chgItemQty(11, -1)">
                   −
@@ -2969,6 +3070,7 @@
               </div>
             </div>
             <div class="co-cart-right">
+              <span class="co-cart-total-label">Price</span>
               <span class="co-cart-total" id="cit-11">৳710</span>
             </div>
           </div>
@@ -2993,10 +3095,7 @@
             />
             <div class="co-cart-body">
               <div class="co-cart-name">Double Layer Coffee Mug</div>
-              <div>
-                <span class="co-cart-orig">৳990</span
-                ><span class="co-cart-price">৳690</span>
-              </div>
+              <div class="co-cart-size">📏 250 ML</div>
               <div class="co-cart-qw">
                 <button class="co-cart-qb" onclick="chgItemQty(12, -1)">
                   −
@@ -3015,6 +3114,7 @@
               </div>
             </div>
             <div class="co-cart-right">
+              <span class="co-cart-total-label">Price</span>
               <span class="co-cart-total" id="cit-12">৳690</span>
             </div>
           </div>
@@ -3038,10 +3138,7 @@
             />
             <div class="co-cart-body">
               <div class="co-cart-name">Pretty Kitty Mug Double Layer Mug</div>
-              <div>
-                <span class="co-cart-orig">৳1050</span
-                ><span class="co-cart-price">৳750</span>
-              </div>
+              <div class="co-cart-size">📏 250 ML</div>
               <div class="co-cart-qw">
                 <button class="co-cart-qb" onclick="chgItemQty(13, -1)">
                   −
@@ -3060,6 +3157,7 @@
               </div>
             </div>
             <div class="co-cart-right">
+              <span class="co-cart-total-label">Price</span>
               <span class="co-cart-total" id="cit-13">৳750</span>
             </div>
           </div>
@@ -3401,6 +3499,7 @@
         const ci = document.getElementById("ci-" + id);
         const card = document.getElementById("pcard-" + id);
         const pbtn = document.getElementById("pbtn-" + id);
+        const phot = document.getElementById("phot-" + id);
         if (cb) cb.checked = selected;
         if (selected) {
           const existingQty =
@@ -3408,6 +3507,7 @@
           SELECTED[id] = { qty: existingQty };
           ci?.classList.add("in-cart");
           card?.classList.add("selected");
+          phot?.classList.add("show");
           if (pbtn) {
             pbtn.classList.add("added");
             const s = pbtn.querySelector("span");
@@ -3418,6 +3518,7 @@
           delete SELECTED[id];
           ci?.classList.remove("in-cart");
           card?.classList.remove("selected");
+          phot?.classList.remove("show");
           if (pbtn) {
             pbtn.classList.remove("added");
             const s = pbtn.querySelector("span");
