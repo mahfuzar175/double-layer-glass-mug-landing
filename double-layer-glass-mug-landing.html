@@ -3032,6 +3032,7 @@
                 id="fn"
                 placeholder="Enter your full name"
                 autocomplete="given-name"
+                required
               />
               <div class="emsg" id="fe">আপনার সম্পূর্ণ নাম টি প্রয়োজন।</div>
             </div>
@@ -3042,9 +3043,14 @@
                 id="ph"
                 placeholder="01xxxxxxxxx"
                 autocomplete="tel"
+                pattern="^01[3-9]\d{8}$"
+                title="আপনার ১১ সংখ্যার সঠিক ফোন নাম্বারটি প্রয়োজন।"
               />
-              <div class="emsg" id="pe">আপনার ফোন নাম্বারটি প্রয়োজন।</div>
+              <div class="emsg" id="pe">
+                আপনার সঠিক ১১ সংখ্যার ফোন নাম্বারটি প্রয়োজন (01XXXXXXXXX)।
+              </div>
             </div>
+
             <div class="cf">
               <label
                 >আপনার সম্পূর্ণ ঠিকানাটি লিখুন <span class="r">*</span></label
@@ -3104,22 +3110,7 @@
               >
             </p>
             <button class="co-btn" id="pb" onclick="placeOrder()">
-              <?xml version="1.0" encoding="utf-8"?>
-              <!-- License: Apache. Made by Iconscout: https://github.com/Iconscout/unicons -->
-              <svg
-                fill="#ffffff"
-                width="24px"
-                height="24px"
-                viewBox="0 0 24 24"
-                id="Layer_1"
-                data-name="Layer 1"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8.5,19A1.5,1.5,0,1,0,10,20.5,1.5,1.5,0,0,0,8.5,19ZM19,16H7a1,1,0,0,1,0-2h8.49121A3.0132,3.0132,0,0,0,18.376,11.82422L19.96143,6.2749A1.00009,1.00009,0,0,0,19,5H6.73907A3.00666,3.00666,0,0,0,3.92139,3H3A1,1,0,0,0,3,5h.92139a1.00459,1.00459,0,0,1,.96142.7251l.15552.54474.00024.00506L6.6792,12.01709A3.00006,3.00006,0,0,0,7,18H19a1,1,0,0,0,0-2ZM17.67432,7l-1.2212,4.27441A1.00458,1.00458,0,0,1,15.49121,12H8.75439l-.25494-.89221L7.32642,7ZM16.5,19A1.5,1.5,0,1,0,18,20.5,1.5,1.5,0,0,0,16.5,19Z"
-                />
-              </svg>
-              অর্ডার করুন &nbsp;৳<span id="bt">50.00</span>
+              🛒 অর্ডার করুন &nbsp;৳<span id="bt">50.00</span>
             </button>
           </div>
         </div>
@@ -3345,6 +3336,8 @@
 
       function placeOrder() {
         let ok = true;
+        const phonePattern = /^01[3-9]\d{8}$/;
+
         [
           { id: "fn", e: "fe" },
           { id: "ph", e: "pe" },
@@ -3352,7 +3345,13 @@
         ].forEach((f) => {
           const el = document.getElementById(f.id),
             em = document.getElementById(f.e);
-          if (!el.value.trim()) {
+          const val = el.value.trim();
+
+          if (!val) {
+            el.classList.add("err");
+            em.classList.add("show");
+            ok = false;
+          } else if (f.id === "ph" && !phonePattern.test(val)) {
             el.classList.add("err");
             em.classList.add("show");
             ok = false;
@@ -3406,7 +3405,10 @@
 
       ["fn", "ph", "ad"].forEach((id, i) => {
         document.getElementById(id)?.addEventListener("input", function () {
-          if (this.value.trim()) {
+          const val = this.value.trim();
+          const isValid =
+            id === "ph" ? /^01[3-9]\d{8}$/.test(val) : val.length > 0;
+          if (isValid) {
             this.classList.remove("err");
             document
               .getElementById(["fe", "pe", "ae"][i])
