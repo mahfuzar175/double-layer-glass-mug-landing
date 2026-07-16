@@ -55,12 +55,7 @@
         --red-700: #b91c1c;
         --green-wa: #25d366;
         --grad-blue: linear-gradient(135deg, #2563eb, #1d4ed8);
-        --grad-hero: linear-gradient(
-          135deg,
-          #eff6ff 0%,
-          #dbeafe 40%,
-          #fee2e2 100%
-        );
+         --grad-hero:#fef9f5;
       }
 
       /* ══ ANIMATIONS ══ */
@@ -250,7 +245,7 @@
 
       /* ══ HERO ══ */
       .hero {
-        background: #eef2ff;
+        background:#fef9f5;
         padding: 32px 16px 40px;
         position: relative;
         overflow: hidden;
@@ -288,7 +283,7 @@
       /* Clean, distraction-free hero background on small devices */
       @media (max-width: 576px) {
         .hero {
-          background: #eef2ff;
+          background:#fef9f5;
           padding: 20px 14px 28px;
         }
         .hero-deco,
@@ -317,7 +312,9 @@
         color: #1e293b;
       }
       .hero-h1 .grad-text {
-        color: var(--blue-700);
+         background: linear-gradient(135deg, #ec4899, #a855f7, #2dd4bf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
       }
       .hero-sub {
         font-size: clamp(14px, 3vw, 17px);
@@ -530,11 +527,17 @@
         line-height: 1.25;
         margin-bottom: 8px;
       }
-      .sec-h2 span {
+      /* .sec-h2 span {
         background: linear-gradient(135deg, #2563eb, #dc2626);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-      }
+      } */
+
+.sec-h2 span {
+  background: linear-gradient(135deg, #ec4899, #a855f7, #2dd4bf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
       .sec-h2.on-dark {
         color: #fff;
       }
@@ -747,7 +750,7 @@
       /* ══ FEATURES SECTION (image 1 style) ══ */
       .features-section {
         padding: 44px 16px;
-        background: #fff;
+        background: #fef9f5;
       }
       .feat-card {
         background: #fff;
@@ -1008,7 +1011,7 @@
 
       /* ══ CHECKOUT ══ */
       #Checkout {
-        background: #f8fafc;
+        background: #fef9f5;
         padding: 30px 16px 50px;
         font-family: "Anek Bangla", sans-serif;
       }
@@ -1027,12 +1030,18 @@
         color: #64748b;
         margin-bottom: 20px;
       }
-      .co-cart-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-bottom: 24px;
-      }
+  .co-cart-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+      @media (min-width: 768px) {
+  .co-cart-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
       .co-cart-item {
         background: #fff;
         border: 1.5px solid #e2e8f0;
@@ -1592,7 +1601,7 @@
 
     <!-- ══ HERO ══ -->
     <section class="hero">
-      <div class="hero-deco hero-deco-1"></div>
+      <!-- <div class="hero-deco hero-deco-1"></div>
       <div class="hero-deco hero-deco-2"></div>
       <div class="toy-float" style="top: 10%; left: 5%; animation-delay: 0s">
         ☕
@@ -1608,7 +1617,7 @@
         style="bottom: 20%; right: 5%; animation-delay: 0.5s"
       >
         🎁
-      </div>
+      </div> -->
 
       <div class="container">
         <div class="row justify-content-center">
@@ -2240,7 +2249,16 @@
               href="https://wa.link/jwi3gl"
               target="_blank"
               class="btn-wa-outline"
-              >💬 হোয়াটসঅ্যাপ</a
+              ><svg
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.506.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                    />
+                  </svg> হোয়াটসঅ্যাপ</a
             >
             <a href="tel:09643330000" class="btn-call-outline">📞 কল করুন</a>
           </div>
@@ -2265,150 +2283,7 @@
       </div>
     </div> -->
 
-    <!-- ══ HOW TO USE (image 2 style) ══ -->
-    <section class="howto-section">
-      <div class="container howto-inner">
-        <div class="sec-title-wrap sa">
-          <div class="sec-label on-dark">🛠️ যত্ন ও ব্যবহার</div>
-          <h2 class="sec-h2 on-dark">
-            মাত্র কয়েকটি সহজ ধাপে <span>মগটি ব্যবহার করুন</span>
-          </h2>
-          <p class="sec-desc on-dark">
-            দীর্ঘদিন ভালো রাখতে এই ধাপগুলো অনুসরণ করুন
-          </p>
-        </div>
 
-        <!-- Mobile / tablet: simple single-column timeline -->
-        <div class="howto-line d-lg-none">
-          <div class="howto-step sa">
-            <div class="howto-num">১</div>
-            <div class="howto-card">
-              <strong>প্যাকেট খুলুন</strong
-              ><span
-                >বাক্স থেকে মগটি সাবধানে বের করুন এবং কোনো ফাটল আছে কিনা পরীক্ষা
-                করুন।</span
-              >
-            </div>
-          </div>
-          <div class="howto-step sa">
-            <div class="howto-num">২</div>
-            <div class="howto-card">
-              <strong>প্রথমবার ধুয়ে নিন</strong
-              ><span
-                >ব্যবহারের আগে হালকা গরম পানি ও লিকুইড সোপ দিয়ে ধুয়ে
-                নিন।</span
-              >
-            </div>
-          </div>
-          <div class="howto-step sa">
-            <div class="howto-num">৩</div>
-            <div class="howto-card">
-              <strong>পানীয় ঢালুন</strong
-              ><span
-                >চা, কফি বা যেকোনো গরম/ঠান্ডা পানীয় ঢালুন — বাইরের অংশ থাকবে
-                হালকা গরম।</span
-              >
-            </div>
-          </div>
-          <div class="howto-step sa">
-            <div class="howto-num">৪</div>
-            <div class="howto-card">
-              <strong>নিশ্চিন্তে উপভোগ করুন</strong
-              ><span>ডাবল লেয়ার ডিজাইনের কারণে হাত পোড়ার ভয় নেই।</span>
-            </div>
-          </div>
-          <div class="howto-step sa">
-            <div class="howto-num">৫</div>
-            <div class="howto-card">
-              <strong>যত্ন নিন</strong
-              ><span
-                >ব্যবহারের পর ডিশওয়াশার বা হাত দিয়ে হালকাভাবে ধুয়ে
-                রাখুন।</span
-              >
-            </div>
-          </div>
-        </div>
-
-        <!-- Desktop: zigzag timeline (odd steps left, even steps right) -->
-        <div class="howto-timeline d-none d-lg-block">
-          <div class="howto-row sa">
-            <div class="howto-col left">
-              <div class="howto-card">
-                <strong>প্যাকেট খুলুন</strong
-                ><span
-                  >বাক্স থেকে মগটি সাবধানে বের করুন এবং কোনো ফাটল আছে কিনা
-                  পরীক্ষা করুন।</span
-                >
-              </div>
-            </div>
-            <div class="howto-num">১</div>
-            <div class="howto-col right"></div>
-          </div>
-          <div class="howto-row sa">
-            <div class="howto-col left"></div>
-            <div class="howto-num">২</div>
-            <div class="howto-col right">
-              <div class="howto-card">
-                <strong>প্রথমবার ধুয়ে নিন</strong
-                ><span
-                  >ব্যবহারের আগে হালকা গরম পানি ও লিকুইড সোপ দিয়ে ধুয়ে
-                  নিন।</span
-                >
-              </div>
-            </div>
-          </div>
-          <div class="howto-row sa">
-            <div class="howto-col left">
-              <div class="howto-card">
-                <strong>পানীয় ঢালুন</strong
-                ><span
-                  >চা, কফি বা যেকোনো গরম/ঠান্ডা পানীয় ঢালুন — বাইরের অংশ থাকবে
-                  হালকা গরম।</span
-                >
-              </div>
-            </div>
-            <div class="howto-num">৩</div>
-            <div class="howto-col right"></div>
-          </div>
-          <div class="howto-row sa">
-            <div class="howto-col left"></div>
-            <div class="howto-num">৪</div>
-            <div class="howto-col right">
-              <div class="howto-card">
-                <strong>নিশ্চিন্তে উপভোগ করুন</strong
-                ><span>ডাবল লেয়ার ডিজাইনের কারণে হাত পোড়ার ভয় নেই।</span>
-              </div>
-            </div>
-          </div>
-          <div class="howto-row sa">
-            <div class="howto-col left">
-              <div class="howto-card">
-                <strong>যত্ন নিন</strong
-                ><span
-                  >ব্যবহারের পর ডিশওয়াশার বা হাত দিয়ে হালকাভাবে ধুয়ে
-                  রাখুন।</span
-                >
-              </div>
-            </div>
-            <div class="howto-num">৫</div>
-            <div class="howto-col right"></div>
-          </div>
-        </div>
-
-        <div class="cta-group sa mt-4">
-          <a href="#Checkout" class="btn-order-main">🛒 এখনই অর্ডার করুন</a>
-          <div class="cta-sub-row cta-sub-row-white">
-            <a
-              href="https://wa.link/jwi3gl"
-              target="_blank"
-              class="btn-wa-outline"
-              >💬 হোয়াটসঅ্যাপ</a
-            >
-            <a href="tel:09643330000" class="btn-call-outline">📞 কল করুন</a>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- ══ FINAL CTA ══ -->
     <section class="cta-section">
@@ -2426,7 +2301,16 @@
               href="https://wa.link/jwi3gl"
               target="_blank"
               class="btn-wa-outline"
-              >💬 হোয়াটসঅ্যাপ</a
+              ><svg
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.506.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                    />
+                  </svg> হোয়াটসঅ্যাপ</a
             >
             <a href="tel:09643330000" class="btn-call-outline">📞 কল করুন</a>
           </div>
