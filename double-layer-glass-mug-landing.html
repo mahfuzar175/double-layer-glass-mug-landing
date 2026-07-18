@@ -224,7 +224,7 @@
       @media (max-width: 576px) {
         .urgency-bar {
           padding: 10px 42px 10px 10px;
-          font-size: 14px; /* আগে ছিল 19px */
+          font-size: 14px;
         }
         .urgency-inner {
           flex-wrap: wrap;
@@ -321,6 +321,11 @@
         margin-bottom: 10px;
         color: #1e293b;
       }
+      @media (max-width: 576px) {
+        .hero-h1 {
+          font-size: 1.4rem;
+        }
+      }
       .hero-h1 .grad-text {
         background: linear-gradient(135deg, #ec4899, #a855f7, #6366f1);
         -webkit-background-clip: text;
@@ -370,6 +375,40 @@
         gap: 8px;
         margin-bottom: 22px;
         flex-wrap: wrap;
+      }
+
+      @media (max-width: 576px) {
+        .hero-timer {
+          flex-wrap: nowrap;
+          gap: 4px;
+          margin-bottom: 16px;
+          width: 100%;
+          padding: 0 6px;
+        }
+        .timer-label {
+          font-size: 10px;
+          padding: 3px 6px;
+          white-space: nowrap;
+          flex-shrink: 0;
+        }
+        .t-box {
+          width: 38px;
+          height: 38px;
+          border-radius: 7px;
+          flex-shrink: 0;
+        }
+        .t-num {
+          font-size: 14px;
+        }
+        .t-lbl {
+          font-size: 7px;
+          margin-top: 1px;
+        }
+        .t-sep {
+          font-size: 14px;
+          margin-top: -6px;
+          flex-shrink: 0;
+        }
       }
       .timer-label {
         font-size: 12px;
@@ -1569,7 +1608,7 @@
         inset: 0;
         background: rgba(15, 23, 42, 0.35);
         backdrop-filter: blur(2px);
-        z-index: 7710;
+        z-index: 7610;
         align-items: center;
         justify-content: center;
         padding: 16px;
@@ -2508,93 +2547,93 @@
       /* ══ PRODUCT DATA & CART LOGIC — SKU added ══ */
       const PRODS = {
         1: {
-          sku: "1503",
+          sku: "DM1503",
           name: "Pastel Flower Double Layer Mug",
-          price: 710,
+          price: 610,
           size: "350 ML",
           img: "https://storage.biddabari.online/biddabari-bucket/uploads/all/double-layer-mug-asset/Pastle-Flower-Double-Layer-Mug-01.webp",
         },
         2: {
-          sku: "1509",
+          sku: "DM1509",
           name: "Yellow Blossom Double Layer Mug",
-          price: 710,
+          price: 610,
           size: "350 ML",
           img: "https://storage.biddabari.online/biddabari-bucket/uploads/all/double-layer-mug-asset/Yellow-Blossom-Double-Layer-Mug-2.webp",
         },
         3: {
-          sku: "1504",
+          sku: "DM1504",
           name: "Tropical Aurora Double Layer Mug",
-          price: 710,
+          price: 610,
           size: "350 ML",
           img: "https://storage.biddabari.online/biddabari-bucket/uploads/all/double-layer-mug-asset/Tropical-Aurora-Double-Layer-Mug-3.webp",
         },
         4: {
-          sku: "1502",
+          sku: "DM1502",
           name: "Candy Splash Double Layer Glass",
-          price: 690,
+          price: 590,
           size: "250 ML",
           img: "https://storage.biddabari.online/biddabari-bucket/uploads/all/double-layer-mug-asset/Candy-Splash-Double-Layer-Glass-4.webp",
         },
         5: {
-          sku: "1501",
+          sku: "DM1501",
           name: "Cherry Nature Double layer Glass",
-          price: 690,
+          price: 590,
           size: "250 ML",
           img: "https://storage.biddabari.online/biddabari-bucket/uploads/all/double-layer-mug-asset/Cherry-Nature-Double-layer-Glass-5.webp",
         },
         6: {
-          sku: "1506",
+          sku: "DM1506",
           name: "Dream Petal Double Layer Mug",
-          price: 710,
+          price: 610,
           size: "350 ML",
           img: "https://storage.biddabari.online/biddabari-bucket/uploads/all/double-layer-mug-asset/Dream-Petal-Double-Layer-Mug-6.webp",
         },
         7: {
-          sku: "1507",
+          sku: "DM1507",
           name: "Prisom Peace Double Layer Mug",
-          price: 710,
+          price: 610,
           size: "350 ML",
           img: "https://storage.biddabari.online/biddabari-bucket/uploads/all/double-layer-mug-asset/Prisom-Peace-Double-Layer-Mug-7.webp",
         },
         8: {
-          sku: "1508",
+          sku: "DM1508",
           name: "Pinky Sakura Double Layer Mug",
-          price: 690,
+          price: 590,
           size: "250 ML",
           img: "https://storage.biddabari.online/biddabari-bucket/uploads/all/double-layer-mug-asset/Pinky-Sakura-Double-Layer-Mug-8.webp",
         },
         9: {
-          sku: "1510",
+          sku: "DM1510",
           name: "Feather Mist Double Layer Mug",
-          price: 710,
+          price: 610,
           size: "350 ML",
           img: "https://storage.biddabari.online/biddabari-bucket/uploads/all/double-layer-mug-asset/Feather-Mist-Double-Layer-Mug-9.webp",
         },
         10: {
-          sku: "1511",
+          sku: "DM1511",
           name: "Mint Blossom Double Layer Mug",
-          price: 710,
+          price: 610,
           size: "350 ML",
           img: "https://storage.biddabari.online/biddabari-bucket/uploads/all/double-layer-mug-asset/Mint-Blossom-Double-Layer-Mug-10.webp",
         },
         11: {
-          sku: "1505",
+          sku: "DM1505",
           name: "Layer Blush Double Layer Mug",
-          price: 710,
+          price: 610,
           size: "350 ML",
           img: "https://storage.biddabari.online/biddabari-bucket/uploads/all/double-layer-mug-asset/Layer-Blush-Double-Layer-Mug-11.webp",
         },
         12: {
-          sku: "1512",
+          sku: "DM1512",
           name: "Double Layer Coffee Mug",
-          price: 690,
+          price: 590,
           size: "200 ML",
           img: "https://storage.biddabari.online/biddabari-bucket/uploads/all/double-layer-mug-asset/Double-Layer-Coffee-Mug-12.webp",
         },
         13: {
-          sku: "1513",
+          sku: "DM1513",
           name: "Pretty Kitty Mug Double Layer Mug",
-          price: 750,
+          price: 650,
           size: "250 ML",
           img: "https://storage.biddabari.online/biddabari-bucket/uploads/all/double-layer-mug-asset/Pretty Kitty Mug Double Layer Mug-13.webp",
         },
