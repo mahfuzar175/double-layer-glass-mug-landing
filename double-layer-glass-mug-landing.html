@@ -255,18 +255,23 @@
 
       /* ══ HERO ══ */
       .hero {
-        /* background: #fef9f5; */
+        position: relative;
+        overflow: hidden;
+        min-height: 65vh;
+        padding: 70px 16px 60px;
+        font-family: "Anek Bangla", sans-serif;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
         background-image: url(https://storage.biddabari.online/biddabari-bucket/uploads/all/double-layer-mug-asset/Header_Banner_PC.webp);
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: center;
         background-size: cover;
-        /* padding: 32px 16px 40px; */
-        min-height: 70vh;
-        padding: 70px 16px 60px;
-        position: relative;
-        overflow: hidden;
-        font-family: "Anek Bangla", sans-serif;
+        opacity: 0.9;
+        z-index: -1;
       }
       /* .hero::before {
   content: "";
@@ -311,25 +316,29 @@
       /* Clean, distraction-free hero background on small devices */
       @media (max-width: 576px) {
         .hero {
-          background-image: url(https://storage.biddabari.online/biddabari-bucket/uploads/all/double-layer-mug-asset/Header_Banner_Mobile.webp);
-          /* background-size: cover; */
-          /* min-height: 50vh; */
-          padding: 20px 14px 28px;
-        }
-
-        .hero {
-          /* background: #fef9f5; */
-
-          padding: 32px 16px 40px;
           position: relative;
-          overflow: hidden;
-          font-family: "Anek Bangla", sans-serif;
+          background-image: url(https://storage.biddabari.online/biddabari-bucket/uploads/all/double-layer-mug-asset/Header_Banner_Mobile.webp);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          padding: 20px 14px 28px;
+          z-index: 1;
         }
-        .hero-deco,
-        .toy-float {
-          display: none;
+
+        .hero::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: rgba(128, 125, 125, 0.349);
+          z-index: -1;
         }
       }
+      .hero-deco,
+      .toy-float {
+        display: none;
+      }
+
       .hero-tag {
         display: inline-flex;
         align-items: center;
@@ -356,7 +365,7 @@
         }
       }
       .hero-h1 .grad-text {
-        background: linear-gradient(135deg, #ec4899, #a855f7, #6366f1);
+        background: linear-gradient(135deg, #eb328e, #903ae0, #1619db);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -364,7 +373,7 @@
       }
       .hero-sub {
         font-size: clamp(14px, 3vw, 17px);
-        color: #475569;
+        color: #364355;
         margin-bottom: 18px;
         line-height: 1.55;
         font-weight: 500;
